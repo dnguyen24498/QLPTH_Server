@@ -1,0 +1,284 @@
+﻿<Window x:Class="View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:View"
+        xmlns:gif="http://wpfanimatedgif.codeplex.com"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:FontAwe="http://schemas.fontawesome.io/icons/"
+        xmlns:ViewModel="clr-namespace:ViewModel;assembly=ViewModel"
+        mc:Ignorable="d" WindowStyle="None" ResizeMode="NoResize"
+        Height="675" Width="975" MinHeight="675" MinWidth="975"
+        DataContext="{Binding Source={x:Static ViewModel:ViewModelLocator.MainWindowViewModelStatic}}"
+        WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <!--Dùng để binding viewmodel vs view-->
+        <BooleanToVisibilityConverter x:Key="btv" />
+        <!-- style a non-top level menu item -->
+        <ControlTemplate x:Key="VsMenuSub" TargetType="MenuItem">
+            <DockPanel TextBlock.FontSize="12px" Width="120" Height="30" 
+                       x:Name="panel" VerticalAlignment="Center">
+                <!-- label, icons, etc. -->
+                <Label Content="{TemplateBinding Header}"
+                       VerticalAlignment="Center" Margin="5 0 0 0"
+                       Foreground="Black" />
+
+                <!-- draw the right arrow only if this menu item has sub items -->
+
+                <!-- sub items -->
+                <Popup IsOpen="{TemplateBinding IsSubmenuOpen}" AllowsTransparency="True" Focusable="False" Placement="Right" >
+                    <Border BorderThickness="1" Background="White" BorderBrush="#E0E0E0">
+                        <StackPanel IsItemsHost="True" />
+                    </Border>
+                </Popup>
+            </DockPanel>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsHighlighted" Value="True">
+                    <Setter Property="Background" TargetName="panel" Value="#EFF6FC" />
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+        <!-- style the separator -->
+        <ControlTemplate x:Key="VsMenuSep" TargetType="Separator">
+            <Border Height="1" Background="#E0E0E0" />
+        </ControlTemplate>
+
+        <!-- style the VSOnline -->
+        <ControlTemplate x:Key="VsOnline" TargetType="MenuItem">
+            <StackPanel TextBlock.FontSize="12px" Height="26" Orientation="Horizontal" Background="#282D31">
+                <Label Content="{TemplateBinding Header}" Margin="3 0 3 0" Foreground="White" />
+
+                <!-- sub items -->
+                <Popup IsOpen="{TemplateBinding IsSubmenuOpen}" AllowsTransparency="True" Focusable="False">
+                    <Border BorderThickness="1" Background="White" BorderBrush="#E0E0E0">
+                        <StackPanel IsItemsHost="True" />
+                    </Border>
+                </Popup>
+            </StackPanel>
+        </ControlTemplate>
+
+        <!-- some base stuff -->
+        <Style TargetType="Menu">
+            <Setter Property="Background" Value="#0078D7" />
+            <Setter Property="Height" Value="26" />
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style>
+
+    </Window.Resources>
+
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadedWindowCommand}"
+                                   CommandParameter="{Binding ElementName=grMainArea}"></i:InvokeCommandAction>
+        </i:EventTrigger>
+        <i:EventTrigger EventName="Closed">
+            <i:InvokeCommandAction Command="{Binding ClosedWindowCommand}"></i:InvokeCommandAction>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="26"></RowDefinition>
+            <RowDefinition Height="55"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid  Name="grTitleBar" Background="#282D31" Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <ToolBarOverflowPanel Grid.Column="0">
+                <materialDesign:PackIcon Kind="Battlenet" Margin="5 0 5 0" Height="20" Width="20"
+                                         Foreground="White" VerticalAlignment="Center"
+                                         ></materialDesign:PackIcon>
+                <Menu IsMainMenu="True" Height="26">
+                    <MenuItem Header="_Tài khoản" Template="{StaticResource VsOnline}" >
+                        <MenuItem Header="_Đăng nhập" Template="{StaticResource VsMenuSub}" />
+                        <MenuItem Header="_Thông tin tài khoản" Template="{StaticResource VsMenuSub}" />
+                        <MenuItem Header="_Đăng xuất" Template="{StaticResource VsMenuSub}" />
+                    </MenuItem>
+                    <MenuItem Header="_Phòng" Template="{StaticResource VsOnline}">
+                        <MenuItem Header="_Chi tiết phòng" Template="{StaticResource VsMenuSub}" />
+                    </MenuItem>
+                    <MenuItem Header="_Thiết bị" Template="{StaticResource VsOnline}">
+                        <MenuItem Header="_Files" Template="{StaticResource VsMenuSub}" />
+                        <MenuItem Header="_Commits" Template="{StaticResource VsMenuSub}" />
+                        <MenuItem Header="_Pushes" Template="{StaticResource VsMenuSub}" />
+                    </MenuItem>
+                    <MenuItem Header="_Máy khách" Template="{StaticResource VsOnline}">
+                        <MenuItem Header="_Backlogs" Template="{StaticResource VsMenuSub}" Icon="icon_backlogs.png" />
+                        <MenuItem Header="_Queries" Template="{StaticResource VsMenuSub}" Icon="icon_queries.png" />
+                        <Separator Template="{StaticResource VsMenuSep}" />
+                        <MenuItem Header="_New Work Item" Template="{StaticResource VsMenuSub}">
+                            <MenuItem Header="_Epic" Template="{StaticResource VsMenuSub}" Icon="icon_epic.png" />
+                            <MenuItem Header="_Feature" Template="{StaticResource VsMenuSub}" Icon="icon_feature.png" />
+                            <MenuItem Header="_Issue" Template="{StaticResource VsMenuSub}" Icon="icon_issue.png" />
+                            <MenuItem Header="_Task" Template="{StaticResource VsMenuSub}" Icon="icon_task.png" />
+                            <MenuItem Header="_Test Case" Template="{StaticResource VsMenuSub}" Icon="icon_testcase.png" />
+                            <MenuItem Header="_User Story" Template="{StaticResource VsMenuSub}" Icon="icon_userstory.png" />
+                        </MenuItem>
+                        <MenuItem Header="_Bug" Template="{StaticResource VsMenuSub}" Icon="icon_bug.png" />
+                    </MenuItem>
+                    <MenuItem Header="_Cài đặt" Click="MenuItem_Click" Template="{StaticResource VsOnline}"></MenuItem>
+                </Menu>
+            </ToolBarOverflowPanel>
+            <Grid Grid.Column="1" Background="Transparent"
+                  PreviewMouseLeftButtonDown="grMenuTitle_PreviewMouseLeftButtonDown"></Grid>
+            <StackPanel Grid.Column="1" Name="grButtonTray" VerticalAlignment="Bottom"
+                        HorizontalAlignment="Right"
+                        Width="135" Orientation="Horizontal">
+                <StackPanel.Resources>
+                    <Style TargetType="Button">
+                        <Setter Property="Width" Value="45"></Setter>
+                        <Setter Property="BorderThickness" Value="0"></Setter>
+                        <Setter Property="Height" Value="26"></Setter>
+                        <Setter Property="Background" Value="Transparent"></Setter>
+                        <Setter Property="Foreground" Value="#FFFFFF"></Setter>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}" BorderBrush="Transparent" BorderThickness="0">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#878787"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </StackPanel.Resources>
+                <Button Click="btnMinimize_Click">
+                    <materialDesign:PackIcon Kind="Minus"></materialDesign:PackIcon>
+                </Button>
+                <Button Click="btnMaximize_Click" IsEnabled="False">
+                    <materialDesign:PackIcon Kind="WindowMaximize" Foreground="Gray"
+                                             ></materialDesign:PackIcon>
+                </Button>
+                <Button Click="btnClose_Click">
+                    <materialDesign:PackIcon  Kind="Close"></materialDesign:PackIcon>
+                </Button>
+
+            </StackPanel>
+        </Grid>
+        <Rectangle HorizontalAlignment="Stretch" Grid.Row="0" VerticalAlignment="Bottom"
+                   Fill="#000000" Height="1"/>
+        <Grid x:Name="grRoomInformation" VerticalAlignment="Top" 
+              Grid.Row="1" Background="#282D31">
+            <Grid.Resources>
+                <Style TargetType="materialDesign:PackIcon">
+                    <Setter Property="Height" Value="24"></Setter>
+                    <Setter Property="VerticalAlignment" Value="Center"></Setter>
+                    <Setter Property="Width" Value="24"></Setter>
+                </Style>
+                <Style TargetType="TextBlock">
+                    <Setter Property="FontSize" Value="15"></Setter>
+                    <Setter Property="VerticalAlignment" Value="Center"></Setter>
+                    <Setter Property="FontWeight" Value="DemiBold"></Setter>
+                </Style>
+            </Grid.Resources>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="220"></ColumnDefinition>
+                <ColumnDefinition  Width="200"></ColumnDefinition>
+                <ColumnDefinition  Width="200"></ColumnDefinition>
+                <ColumnDefinition  Width="200"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Height="55" Background="Transparent" BorderThickness="0" BorderBrush="Transparent">
+                <Grid  HorizontalAlignment="Left">
+                    <materialDesign:PackIcon Kind="OfficeBuilding"></materialDesign:PackIcon>
+                    <StackPanel HorizontalAlignment="Left" Margin="40 0 0 0" Orientation="Horizontal">
+                        <StackPanel>
+                            <TextBlock Text="Khu" FontSize="12" FontWeight="Normal"></TextBlock>
+                            <TextBlock Text="{Binding AreaName}" HorizontalAlignment="Center"></TextBlock>
+                        </StackPanel>
+                        <materialDesign:PackIcon Foreground="White"
+                            Kind="ArrowDownBoldHexagonOutline" Height="20" Width="20"
+                                                 Margin="105 0 0 0"
+                                                 ></materialDesign:PackIcon>
+                    </StackPanel>
+                </Grid>
+            </Button>
+
+            <Rectangle VerticalAlignment="Stretch" Fill="#000000" Width="1" 
+                       HorizontalAlignment="Right" Grid.Column="0"/>
+
+            <Button Height="55" Background="Transparent" Grid.Column="1"
+                    BorderThickness="0" BorderBrush="Transparent">
+                <Grid HorizontalAlignment="Left">
+                    <materialDesign:PackIcon Kind="FloorPlan"></materialDesign:PackIcon>
+                    <StackPanel HorizontalAlignment="Left" Margin="40 0 0 0" Orientation="Horizontal">
+                        <StackPanel>
+                            <TextBlock Text="Tầng" FontSize="12" FontWeight="Normal"></TextBlock>
+                            <TextBlock Text="{Binding FloorName}" HorizontalAlignment="Center"></TextBlock>
+                        </StackPanel>
+                        <materialDesign:PackIcon Foreground="White"
+                            Kind="ArrowDownBoldHexagonOutline" Height="20" Width="20"
+                                                 Margin="79 0 0 0"
+                                                 ></materialDesign:PackIcon>
+                    </StackPanel>
+                </Grid>
+            </Button>
+            <Rectangle VerticalAlignment="Stretch" Fill="#000000" Width="1" 
+                       HorizontalAlignment="Right" Grid.Column="1"/>
+
+            <Button Height="55" Background="Transparent" Grid.Column="2"
+                    BorderThickness="0" BorderBrush="Transparent">
+                <Grid HorizontalAlignment="Left">
+                    <materialDesign:PackIcon Kind="House"></materialDesign:PackIcon>
+                    <StackPanel HorizontalAlignment="Left" Margin="40 0 0 0" Orientation="Horizontal">
+                        <StackPanel>
+                            <TextBlock Text="Phòng" FontSize="12" FontWeight="Normal"></TextBlock>
+                            <TextBlock Text="{Binding ClassroomName}" HorizontalAlignment="Center"></TextBlock>
+                        </StackPanel>
+                        <materialDesign:PackIcon Foreground="White"
+                            Kind="ArrowDownBoldHexagonOutline" Height="20" Width="20"
+                                                 Margin="70 0 0 0"
+                                                 ></materialDesign:PackIcon>
+                    </StackPanel>
+                </Grid>
+            </Button>
+            <Rectangle VerticalAlignment="Stretch" Fill="#000000" Width="1" 
+                       HorizontalAlignment="Right" Grid.Column="2"/>
+
+            <Button Height="55" Background="Transparent" Grid.Column="3"
+                    BorderThickness="0" BorderBrush="Transparent">
+                <Grid HorizontalAlignment="Left">
+                    <materialDesign:PackIcon Height="20" Width="20" Kind="CommentText"></materialDesign:PackIcon>
+                    <StackPanel HorizontalAlignment="Left" Margin="40 0 0 0" Orientation="Horizontal">
+                        <StackPanel>
+                            <TextBlock Text="Tình trạng" FontSize="12" FontWeight="Normal"></TextBlock>
+                            <TextBlock Text="{Binding ClassroomStatus}" FontSize="14"
+                                       HorizontalAlignment="Center"></TextBlock>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </Button>
+            <Rectangle VerticalAlignment="Stretch" Fill="#000000" Width="1" 
+                       HorizontalAlignment="Right" Grid.Column="3"/>
+
+        </Grid>
+        <Rectangle HorizontalAlignment="Stretch" Grid.Row="1" VerticalAlignment="Bottom" Fill="#000000" Height="1"/>
+        <Grid Name="grTab" Grid.Row="2" Background="White">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="220"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid x:Name="spChat" Background="Transparent">
+                <local:UCMessgener BorderThickness="0"
+                                   Background="White"></local:UCMessgener>
+            </Grid>
+            <Rectangle VerticalAlignment="Stretch" Fill="#E0E3E7" Width="1" 
+                       HorizontalAlignment="Right" Grid.Column="0"/>
+            <Grid Grid.Column="1" Background="White">
+                <local:UCMainControl></local:UCMainControl>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,56 @@
+E:\Nghiên cứu khoa học Ver2\QuanLyPhongThucHanh\ViewModel\bin\Debug\ViewModel.dll
+E:\Nghiên cứu khoa học Ver2\QuanLyPhongThucHanh\ViewModel\bin\Debug\ViewModel.pdb
+E:\Nghiên cứu khoa học Ver2\QuanLyPhongThucHanh\ViewModel\obj\Debug\ViewModel.dll
+E:\Nghiên cứu khoa học Ver2\QuanLyPhongThucHanh\ViewModel\obj\Debug\ViewModel.pdb
+E:\Nghiên cứu khoa học Ver2\QuanLyPhongThucHanh\ViewModel\bin\Debug\BaseViewModel.dll
+E:\Nghiên cứu khoa học Ver2\QuanLyPhongThucHanh\ViewModel\bin\Debug\BaseViewModel.pdb
+E:\Nghiên cứu khoa học Ver2\QuanLyPhongThucHanh\ViewModel\obj\Debug\ViewModel.csproj.CopyComplete
+E:\Nghiên cứu khoa học Ver2\QuanLyPhongThucHanh\ViewModel\bin\Debug\GeneralClasses.dll
+E:\Nghiên cứu khoa học Ver2\QuanLyPhongThucHanh\ViewModel\bin\Debug\ServerSide.dll
+E:\Nghiên cứu khoa học Ver2\QuanLyPhongThucHanh\ViewModel\bin\Debug\GeneralClasses.pdb
+E:\Nghiên cứu khoa học Ver2\QuanLyPhongThucHanh\ViewModel\bin\Debug\ServerSide.pdb
+E:\Nghiên cứu khoa học Ver2\QuanLyPhongThucHanh\ViewModel\obj\Debug\ViewModel.csprojAssemblyReference.cache
+E:\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\ViewModel\obj\Debug\ViewModel.csprojAssemblyReference.cache
+E:\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\ViewModel\obj\Debug\ViewModel.dll
+E:\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\ViewModel\obj\Debug\ViewModel.pdb
+E:\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\ViewModel\bin\Debug\ViewModel.dll
+E:\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\ViewModel\bin\Debug\ViewModel.pdb
+E:\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\ViewModel\bin\Debug\BaseViewModel.pdb
+E:\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\ViewModel\obj\Debug\ViewModel.csproj.CopyComplete
+D:\GitClone\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\ViewModel\bin\Debug\ViewModel.dll
+D:\GitClone\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\ViewModel\bin\Debug\ViewModel.pdb
+D:\GitClone\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\ViewModel\bin\Debug\BaseViewModel.pdb
+D:\GitClone\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\ViewModel\obj\Debug\ViewModel.csprojAssemblyReference.cache
+D:\GitClone\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\ViewModel\obj\Debug\ViewModel.csproj.CoreCompileInputs.cache
+D:\GitClone\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\ViewModel\obj\Debug\ViewModel.csproj.CopyComplete
+D:\GitClone\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\ViewModel\obj\Debug\ViewModel.dll
+D:\GitClone\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\ViewModel\obj\Debug\ViewModel.pdb
+C:\Data\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\ViewModel\bin\Debug\ViewModel.dll
+C:\Data\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\ViewModel\bin\Debug\ViewModel.pdb
+C:\Data\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\ViewModel\bin\Debug\BaseViewModel.pdb
+C:\Data\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\ViewModel\obj\Debug\ViewModel.csprojAssemblyReference.cache
+C:\Data\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\ViewModel\obj\Debug\ViewModel.csproj.CopyComplete
+C:\Data\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\ViewModel\obj\Debug\ViewModel.dll
+C:\Data\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\ViewModel\obj\Debug\ViewModel.pdb
+C:\Data\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\ViewModel\bin\Debug\Notifications.Wpf.dll
+D:\Git\QuanLyPhongThucHanh\ViewModel\bin\Debug\ViewModel.dll
+D:\Git\QuanLyPhongThucHanh\ViewModel\bin\Debug\ViewModel.pdb
+D:\Git\QuanLyPhongThucHanh\ViewModel\bin\Debug\Notifications.Wpf.dll
+D:\Git\QuanLyPhongThucHanh\ViewModel\bin\Debug\BaseViewModel.pdb
+D:\Git\QuanLyPhongThucHanh\ViewModel\obj\Debug\ViewModel.csprojAssemblyReference.cache
+D:\Git\QuanLyPhongThucHanh\ViewModel\obj\Debug\ViewModel.csproj.CopyComplete
+D:\Git\QuanLyPhongThucHanh\ViewModel\obj\Debug\ViewModel.dll
+D:\Git\QuanLyPhongThucHanh\ViewModel\obj\Debug\ViewModel.pdb
+D:\Git\QuanLyPhongThucHanh\ViewModel\bin\Debug\GeneralClass.dll
+D:\Git\QuanLyPhongThucHanh\ViewModel\bin\Debug\Server.dll
+D:\Git\QuanLyPhongThucHanh\ViewModel\bin\Debug\GeneralClass.pdb
+D:\Git\QuanLyPhongThucHanh\ViewModel\bin\Debug\Server.pdb
+D:\Git\QuanLyPhongThucHanh\ViewModel\bin\Debug\Server.dll.config
+D:\Git\QuanLyPhongThucHanh\ViewModel\bin\Debug\ViewModel.dll.config
+D:\Git\QuanLyPhongThucHanh\ViewModel\bin\Debug\Model.dll
+D:\Git\QuanLyPhongThucHanh\ViewModel\bin\Debug\EntityFramework.dll
+D:\Git\QuanLyPhongThucHanh\ViewModel\bin\Debug\Model.pdb
+D:\Git\QuanLyPhongThucHanh\ViewModel\bin\Debug\Model.dll.config
+D:\Git\QuanLyPhongThucHanh\ViewModel\bin\Debug\EntityFramework.xml
+D:\Git\QuanLyPhongThucHanh\ViewModel\bin\Debug\EntityFramework.SqlServer.dll
+D:\Git\QuanLyPhongThucHanh\ViewModel\bin\Debug\EntityFramework.SqlServer.xml

@@ -1,0 +1,256 @@
+E:\Nghiên cứu khoa học Ver2\QuanLyPhongThucHanh\View\bin\Debug\View.exe.config
+E:\Nghiên cứu khoa học Ver2\QuanLyPhongThucHanh\View\bin\Debug\View.exe
+E:\Nghiên cứu khoa học Ver2\QuanLyPhongThucHanh\View\bin\Debug\View.pdb
+E:\Nghiên cứu khoa học Ver2\QuanLyPhongThucHanh\View\bin\Debug\MaterialDesignColors.dll
+E:\Nghiên cứu khoa học Ver2\QuanLyPhongThucHanh\View\bin\Debug\MaterialDesignThemes.Wpf.dll
+E:\Nghiên cứu khoa học Ver2\QuanLyPhongThucHanh\View\bin\Debug\MaterialDesignColors.pdb
+E:\Nghiên cứu khoa học Ver2\QuanLyPhongThucHanh\View\bin\Debug\MaterialDesignThemes.Wpf.pdb
+E:\Nghiên cứu khoa học Ver2\QuanLyPhongThucHanh\View\bin\Debug\MaterialDesignThemes.Wpf.xml
+E:\Nghiên cứu khoa học Ver2\QuanLyPhongThucHanh\View\obj\Debug\View.csprojAssemblyReference.cache
+E:\Nghiên cứu khoa học Ver2\QuanLyPhongThucHanh\View\obj\Debug\MainWindow.g.cs
+E:\Nghiên cứu khoa học Ver2\QuanLyPhongThucHanh\View\obj\Debug\App.g.cs
+E:\Nghiên cứu khoa học Ver2\QuanLyPhongThucHanh\View\obj\Debug\View_MarkupCompile.cache
+E:\Nghiên cứu khoa học Ver2\QuanLyPhongThucHanh\View\obj\Debug\View_MarkupCompile.lref
+E:\Nghiên cứu khoa học Ver2\QuanLyPhongThucHanh\View\obj\Debug\App.baml
+E:\Nghiên cứu khoa học Ver2\QuanLyPhongThucHanh\View\obj\Debug\MainWindow.baml
+E:\Nghiên cứu khoa học Ver2\QuanLyPhongThucHanh\View\obj\Debug\View.g.resources
+E:\Nghiên cứu khoa học Ver2\QuanLyPhongThucHanh\View\obj\Debug\View.Properties.Resources.resources
+E:\Nghiên cứu khoa học Ver2\QuanLyPhongThucHanh\View\obj\Debug\View.csproj.GenerateResource.cache
+E:\Nghiên cứu khoa học Ver2\QuanLyPhongThucHanh\View\obj\Debug\View.csproj.CopyComplete
+E:\Nghiên cứu khoa học Ver2\QuanLyPhongThucHanh\View\obj\Debug\View.exe
+E:\Nghiên cứu khoa học Ver2\QuanLyPhongThucHanh\View\obj\Debug\View.pdb
+E:\Nghiên cứu khoa học Ver2\QuanLyPhongThucHanh\View\bin\Debug\ViewModel.dll
+E:\Nghiên cứu khoa học Ver2\QuanLyPhongThucHanh\View\bin\Debug\ViewModel.pdb
+E:\Nghiên cứu khoa học Ver2\QuanLyPhongThucHanh\View\bin\Debug\FontAwesome.WPF.dll
+E:\Nghiên cứu khoa học Ver2\QuanLyPhongThucHanh\View\bin\Debug\FontAwesome.WPF.xml
+E:\Nghiên cứu khoa học Ver2\QuanLyPhongThucHanh\View\bin\Debug\System.Windows.Interactivity.dll
+E:\Nghiên cứu khoa học Ver2\QuanLyPhongThucHanh\View\bin\Debug\BaseViewModel.dll
+E:\Nghiên cứu khoa học Ver2\QuanLyPhongThucHanh\View\bin\Debug\BaseViewModel.pdb
+E:\Nghiên cứu khoa học Ver2\QuanLyPhongThucHanh\View\obj\Debug\UCThongTinPhong.g.cs
+E:\Nghiên cứu khoa học Ver2\QuanLyPhongThucHanh\View\obj\Debug\UCThongTinPhong.baml
+E:\Nghiên cứu khoa học Ver2\QuanLyPhongThucHanh\View\obj\Debug\UCMessgener.g.cs
+E:\Nghiên cứu khoa học Ver2\QuanLyPhongThucHanh\View\obj\Debug\UCMessgener.baml
+E:\Nghiên cứu khoa học Ver2\QuanLyPhongThucHanh\View\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\Nghiên cứu khoa học Ver2\QuanLyPhongThucHanh\View\bin\Debug\GeneralClasses.dll
+E:\Nghiên cứu khoa học Ver2\QuanLyPhongThucHanh\View\bin\Debug\ServerSide.dll
+E:\Nghiên cứu khoa học Ver2\QuanLyPhongThucHanh\View\bin\Debug\GeneralClasses.pdb
+E:\Nghiên cứu khoa học Ver2\QuanLyPhongThucHanh\View\bin\Debug\ServerSide.pdb
+E:\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\bin\Debug\View.exe.config
+E:\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\bin\Debug\View.exe
+E:\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\bin\Debug\View.pdb
+E:\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\bin\Debug\FontAwesome.WPF.dll
+E:\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\bin\Debug\MaterialDesignColors.dll
+E:\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\bin\Debug\MaterialDesignThemes.Wpf.dll
+E:\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\bin\Debug\System.Windows.Interactivity.dll
+E:\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\bin\Debug\ViewModel.dll
+E:\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\bin\Debug\BaseViewModel.dll
+E:\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\bin\Debug\ViewModel.pdb
+E:\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\bin\Debug\FontAwesome.WPF.xml
+E:\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\bin\Debug\MaterialDesignColors.pdb
+E:\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\bin\Debug\MaterialDesignThemes.Wpf.pdb
+E:\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\bin\Debug\MaterialDesignThemes.Wpf.xml
+E:\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\bin\Debug\BaseViewModel.pdb
+E:\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\View.csprojAssemblyReference.cache
+E:\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\MainWindow.g.cs
+E:\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\UCMessgener.g.cs
+E:\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\UCThongTinPhong.g.cs
+E:\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\App.g.cs
+E:\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\View_MarkupCompile.cache
+E:\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\View_MarkupCompile.lref
+E:\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\App.baml
+E:\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\MainWindow.baml
+E:\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\UCMessgener.baml
+E:\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\UCThongTinPhong.baml
+E:\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\View.g.resources
+E:\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\View.Properties.Resources.resources
+E:\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\View.csproj.GenerateResource.cache
+E:\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\View.csproj.CopyComplete
+E:\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\View.exe
+E:\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\View.pdb
+E:\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\UCThietBiPhong.g.cs
+E:\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\UCThietBiPhong.baml
+E:\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\bin\Debug\WpfAnimatedGif.dll
+E:\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\bin\Debug\WpfAnimatedGif.xml
+D:\GitClone\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\bin\Debug\View.exe.config
+D:\GitClone\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\bin\Debug\View.exe
+D:\GitClone\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\bin\Debug\View.pdb
+D:\GitClone\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\bin\Debug\FontAwesome.WPF.dll
+D:\GitClone\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\bin\Debug\MaterialDesignColors.dll
+D:\GitClone\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\bin\Debug\MaterialDesignThemes.Wpf.dll
+D:\GitClone\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\bin\Debug\System.Windows.Interactivity.dll
+D:\GitClone\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\bin\Debug\ViewModel.dll
+D:\GitClone\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\bin\Debug\WpfAnimatedGif.dll
+D:\GitClone\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\bin\Debug\BaseViewModel.dll
+D:\GitClone\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\bin\Debug\ViewModel.pdb
+D:\GitClone\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\bin\Debug\FontAwesome.WPF.xml
+D:\GitClone\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\bin\Debug\MaterialDesignColors.pdb
+D:\GitClone\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\bin\Debug\MaterialDesignThemes.Wpf.pdb
+D:\GitClone\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\bin\Debug\MaterialDesignThemes.Wpf.xml
+D:\GitClone\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\bin\Debug\WpfAnimatedGif.xml
+D:\GitClone\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\bin\Debug\BaseViewModel.pdb
+D:\GitClone\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\View.csprojAssemblyReference.cache
+D:\GitClone\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\MainWindow.g.cs
+D:\GitClone\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\UCMessgener.g.cs
+D:\GitClone\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\App.g.cs
+D:\GitClone\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\GitClone\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\View_MarkupCompile.cache
+D:\GitClone\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\View_MarkupCompile.lref
+D:\GitClone\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\App.baml
+D:\GitClone\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\MainWindow.baml
+D:\GitClone\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\UCMessgener.baml
+D:\GitClone\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\View.g.resources
+D:\GitClone\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\View.Properties.Resources.resources
+D:\GitClone\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\View.csproj.GenerateResource.cache
+D:\GitClone\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\View.csproj.CoreCompileInputs.cache
+D:\GitClone\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\View.csproj.CopyComplete
+D:\GitClone\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\View.exe
+D:\GitClone\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\View.pdb
+C:\Data\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\bin\Debug\View.exe.config
+C:\Data\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\bin\Debug\View.exe
+C:\Data\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\bin\Debug\View.pdb
+C:\Data\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\bin\Debug\MaterialDesignColors.dll
+C:\Data\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Data\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\bin\Debug\System.Windows.Interactivity.dll
+C:\Data\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\bin\Debug\ViewModel.dll
+C:\Data\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\bin\Debug\BaseViewModel.dll
+C:\Data\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\bin\Debug\ViewModel.pdb
+C:\Data\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\bin\Debug\MaterialDesignColors.pdb
+C:\Data\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Data\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Data\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\bin\Debug\BaseViewModel.pdb
+C:\Data\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\View.csprojAssemblyReference.cache
+C:\Data\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\MainWindow.g.cs
+C:\Data\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\App.g.cs
+C:\Data\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Data\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\View_MarkupCompile.cache
+C:\Data\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\View_MarkupCompile.lref
+C:\Data\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\App.baml
+C:\Data\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\MainWindow.baml
+C:\Data\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\View.g.resources
+C:\Data\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\View.Properties.Resources.resources
+C:\Data\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\View.csproj.GenerateResource.cache
+C:\Data\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\View.csproj.CopyComplete
+C:\Data\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\View.exe
+C:\Data\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\View.pdb
+C:\Data\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\MyResource.baml
+C:\Data\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\UCChatBox.g.cs
+C:\Data\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\UCChatBox.baml
+D:\GitClone\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\UCChatBox.g.cs
+D:\GitClone\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\UCDangNhap.g.cs
+D:\GitClone\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\UCThongTinMayKhach.g.cs
+D:\GitClone\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\MyResource.baml
+D:\GitClone\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\UCChatBox.baml
+D:\GitClone\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\UCDangNhap.baml
+D:\GitClone\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\UCThongTinMayKhach.baml
+C:\Data\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\UCTabMenu.g.cs
+C:\Data\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\UCClientInfor.g.cs
+C:\Data\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\UCTabMenu.baml
+C:\Data\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\UCClientInfor.baml
+C:\Data\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\bin\Debug\Notifications.Wpf.dll
+C:\Data\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\UCMainControl.g.cs
+C:\Data\Git\nghien-cuu-khoa-hoc-v.0.0.1\QuanLyPhongThucHanh\View\obj\Debug\UCMainControl.baml
+D:\Git\QuanLyPhongThucHanh\View\bin\Debug\View.exe.config
+D:\Git\QuanLyPhongThucHanh\View\bin\Debug\View.exe
+D:\Git\QuanLyPhongThucHanh\View\bin\Debug\View.pdb
+D:\Git\QuanLyPhongThucHanh\View\bin\Debug\MaterialDesignColors.dll
+D:\Git\QuanLyPhongThucHanh\View\bin\Debug\MaterialDesignThemes.Wpf.dll
+D:\Git\QuanLyPhongThucHanh\View\bin\Debug\Notifications.Wpf.dll
+D:\Git\QuanLyPhongThucHanh\View\bin\Debug\System.Windows.Interactivity.dll
+D:\Git\QuanLyPhongThucHanh\View\bin\Debug\ViewModel.dll
+D:\Git\QuanLyPhongThucHanh\View\bin\Debug\BaseViewModel.dll
+D:\Git\QuanLyPhongThucHanh\View\bin\Debug\ViewModel.pdb
+D:\Git\QuanLyPhongThucHanh\View\bin\Debug\MaterialDesignColors.pdb
+D:\Git\QuanLyPhongThucHanh\View\bin\Debug\MaterialDesignThemes.Wpf.pdb
+D:\Git\QuanLyPhongThucHanh\View\bin\Debug\MaterialDesignThemes.Wpf.xml
+D:\Git\QuanLyPhongThucHanh\View\bin\Debug\BaseViewModel.pdb
+D:\Git\QuanLyPhongThucHanh\View\obj\Debug\View.csprojAssemblyReference.cache
+D:\Git\QuanLyPhongThucHanh\View\obj\Debug\MainWindow.g.cs
+D:\Git\QuanLyPhongThucHanh\View\obj\Debug\UCChatBox.g.cs
+D:\Git\QuanLyPhongThucHanh\View\obj\Debug\UCMainControl.g.cs
+D:\Git\QuanLyPhongThucHanh\View\obj\Debug\UCTabMenu.g.cs
+D:\Git\QuanLyPhongThucHanh\View\obj\Debug\UCClientInfor.g.cs
+D:\Git\QuanLyPhongThucHanh\View\obj\Debug\App.g.cs
+D:\Git\QuanLyPhongThucHanh\View\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\Git\QuanLyPhongThucHanh\View\obj\Debug\View_MarkupCompile.cache
+D:\Git\QuanLyPhongThucHanh\View\obj\Debug\View_MarkupCompile.lref
+D:\Git\QuanLyPhongThucHanh\View\obj\Debug\App.baml
+D:\Git\QuanLyPhongThucHanh\View\obj\Debug\MainWindow.baml
+D:\Git\QuanLyPhongThucHanh\View\obj\Debug\MyResource.baml
+D:\Git\QuanLyPhongThucHanh\View\obj\Debug\UCChatBox.baml
+D:\Git\QuanLyPhongThucHanh\View\obj\Debug\UCMainControl.baml
+D:\Git\QuanLyPhongThucHanh\View\obj\Debug\UCTabMenu.baml
+D:\Git\QuanLyPhongThucHanh\View\obj\Debug\UCClientInfor.baml
+D:\Git\QuanLyPhongThucHanh\View\obj\Debug\View.g.resources
+D:\Git\QuanLyPhongThucHanh\View\obj\Debug\View.Properties.Resources.resources
+D:\Git\QuanLyPhongThucHanh\View\obj\Debug\View.csproj.GenerateResource.cache
+D:\Git\QuanLyPhongThucHanh\View\obj\Debug\View.csproj.CopyComplete
+D:\Git\QuanLyPhongThucHanh\View\obj\Debug\View.exe
+D:\Git\QuanLyPhongThucHanh\View\obj\Debug\View.pdb
+D:\Git\QuanLyPhongThucHanh\View\obj\Debug\SettingWindow.g.cs
+D:\Git\QuanLyPhongThucHanh\View\obj\Debug\SettingWindow.baml
+D:\Git\QuanLyPhongThucHanh\View\bin\Debug\GeneralClass.dll
+D:\Git\QuanLyPhongThucHanh\View\bin\Debug\Server.dll
+D:\Git\QuanLyPhongThucHanh\View\bin\Debug\GeneralClass.pdb
+D:\Git\QuanLyPhongThucHanh\View\bin\Debug\Server.pdb
+D:\Git\QuanLyPhongThucHanh\View\bin\Debug\Server.dll.config
+D:\Git\QuanLyPhongThucHanh\View\bin\Debug\ViewModel.dll.config
+D:\Git\QuanLyPhongThucHanh\View\bin\Debug\Model.dll
+D:\Git\QuanLyPhongThucHanh\View\bin\Debug\EntityFramework.dll
+D:\Git\QuanLyPhongThucHanh\View\bin\Debug\Model.pdb
+D:\Git\QuanLyPhongThucHanh\View\bin\Debug\Model.dll.config
+D:\Git\QuanLyPhongThucHanh\View\bin\Debug\EntityFramework.xml
+D:\Git\QuanLyPhongThucHanh\View\bin\Debug\EntityFramework.SqlServer.dll
+D:\Git\QuanLyPhongThucHanh\View\bin\Debug\EntityFramework.SqlServer.xml
+D:\Github\QLPTH_Server\View\bin\Debug\View.exe.config
+D:\Github\QLPTH_Server\View\bin\Debug\View.exe
+D:\Github\QLPTH_Server\View\bin\Debug\View.pdb
+D:\Github\QLPTH_Server\View\bin\Debug\EntityFramework.dll
+D:\Github\QLPTH_Server\View\bin\Debug\EntityFramework.SqlServer.dll
+D:\Github\QLPTH_Server\View\bin\Debug\MaterialDesignColors.dll
+D:\Github\QLPTH_Server\View\bin\Debug\MaterialDesignThemes.Wpf.dll
+D:\Github\QLPTH_Server\View\bin\Debug\Notifications.Wpf.dll
+D:\Github\QLPTH_Server\View\bin\Debug\System.Windows.Interactivity.dll
+D:\Github\QLPTH_Server\View\bin\Debug\ViewModel.dll
+D:\Github\QLPTH_Server\View\bin\Debug\BaseViewModel.dll
+D:\Github\QLPTH_Server\View\bin\Debug\GeneralClass.dll
+D:\Github\QLPTH_Server\View\bin\Debug\Model.dll
+D:\Github\QLPTH_Server\View\bin\Debug\Server.dll
+D:\Github\QLPTH_Server\View\bin\Debug\ViewModel.pdb
+D:\Github\QLPTH_Server\View\bin\Debug\ViewModel.dll.config
+D:\Github\QLPTH_Server\View\bin\Debug\EntityFramework.xml
+D:\Github\QLPTH_Server\View\bin\Debug\EntityFramework.SqlServer.xml
+D:\Github\QLPTH_Server\View\bin\Debug\MaterialDesignColors.pdb
+D:\Github\QLPTH_Server\View\bin\Debug\MaterialDesignThemes.Wpf.pdb
+D:\Github\QLPTH_Server\View\bin\Debug\MaterialDesignThemes.Wpf.xml
+D:\Github\QLPTH_Server\View\bin\Debug\BaseViewModel.pdb
+D:\Github\QLPTH_Server\View\bin\Debug\GeneralClass.pdb
+D:\Github\QLPTH_Server\View\bin\Debug\Model.pdb
+D:\Github\QLPTH_Server\View\bin\Debug\Model.dll.config
+D:\Github\QLPTH_Server\View\bin\Debug\Server.pdb
+D:\Github\QLPTH_Server\View\bin\Debug\Server.dll.config
+D:\Github\QLPTH_Server\View\obj\Debug\View.csprojAssemblyReference.cache
+D:\Github\QLPTH_Server\View\obj\Debug\MainWindow.g.cs
+D:\Github\QLPTH_Server\View\obj\Debug\SettingWindow.g.cs
+D:\Github\QLPTH_Server\View\obj\Debug\UCChatBox.g.cs
+D:\Github\QLPTH_Server\View\obj\Debug\UCMainControl.g.cs
+D:\Github\QLPTH_Server\View\obj\Debug\UCTabMenu.g.cs
+D:\Github\QLPTH_Server\View\obj\Debug\UCClientInfor.g.cs
+D:\Github\QLPTH_Server\View\obj\Debug\App.g.cs
+D:\Github\QLPTH_Server\View\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\Github\QLPTH_Server\View\obj\Debug\View_MarkupCompile.cache
+D:\Github\QLPTH_Server\View\obj\Debug\View_MarkupCompile.lref
+D:\Github\QLPTH_Server\View\obj\Debug\App.baml
+D:\Github\QLPTH_Server\View\obj\Debug\MainWindow.baml
+D:\Github\QLPTH_Server\View\obj\Debug\MyResource.baml
+D:\Github\QLPTH_Server\View\obj\Debug\SettingWindow.baml
+D:\Github\QLPTH_Server\View\obj\Debug\UCChatBox.baml
+D:\Github\QLPTH_Server\View\obj\Debug\UCMainControl.baml
+D:\Github\QLPTH_Server\View\obj\Debug\UCTabMenu.baml
+D:\Github\QLPTH_Server\View\obj\Debug\UCClientInfor.baml
+D:\Github\QLPTH_Server\View\obj\Debug\View.g.resources
+D:\Github\QLPTH_Server\View\obj\Debug\View.Properties.Resources.resources
+D:\Github\QLPTH_Server\View\obj\Debug\View.csproj.GenerateResource.cache
+D:\Github\QLPTH_Server\View\obj\Debug\View.csproj.CopyComplete
+D:\Github\QLPTH_Server\View\obj\Debug\View.exe
+D:\Github\QLPTH_Server\View\obj\Debug\View.pdb

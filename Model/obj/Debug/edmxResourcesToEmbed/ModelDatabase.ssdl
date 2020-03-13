@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DB_NCKHModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Area">
+    <Key>
+      <PropertyRef Name="AreaID" />
+    </Key>
+    <Property Name="AreaID" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="AreaName" Type="nvarchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Classroom">
+    <Key>
+      <PropertyRef Name="ClassroomID" />
+    </Key>
+    <Property Name="ClassroomID" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="ClassroomName" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="FLoorID" Type="varchar" MaxLength="12" Nullable="false" />
+    <Property Name="ClassroomStatus" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="ClassroomServerIPV4Address" Type="varchar" MaxLength="15" />
+    <Property Name="ClassroomPortNumber" Type="int" />
+  </EntityType>
+  <EntityType Name="ClassroomDevice">
+    <Key>
+      <PropertyRef Name="ClassroomID" />
+      <PropertyRef Name="DeviceID" />
+    </Key>
+    <Property Name="ClassroomID" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="DeviceID" Type="int" Nullable="false" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Device">
+    <Key>
+      <PropertyRef Name="DeviceID" />
+    </Key>
+    <Property Name="DeviceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DeviceName" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FloorOfArea">
+    <Key>
+      <PropertyRef Name="FloorID" />
+    </Key>
+    <Property Name="FloorID" Type="varchar" MaxLength="12" Nullable="false" />
+    <Property Name="FloorName" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="AreaID" Type="varchar" MaxLength="5" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_Classroom_FloorOfArea">
+    <End Role="FloorOfArea" Type="Self.FloorOfArea" Multiplicity="1" />
+    <End Role="Classroom" Type="Self.Classroom" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FloorOfArea">
+        <PropertyRef Name="FloorID" />
+      </Principal>
+      <Dependent Role="Classroom">
+        <PropertyRef Name="FLoorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClassroomDevice_Classroom">
+    <End Role="Classroom" Type="Self.Classroom" Multiplicity="1" />
+    <End Role="ClassroomDevice" Type="Self.ClassroomDevice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Classroom">
+        <PropertyRef Name="ClassroomID" />
+      </Principal>
+      <Dependent Role="ClassroomDevice">
+        <PropertyRef Name="ClassroomID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClassroomDevice_Device">
+    <End Role="Device" Type="Self.Device" Multiplicity="1" />
+    <End Role="ClassroomDevice" Type="Self.ClassroomDevice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Device">
+        <PropertyRef Name="DeviceID" />
+      </Principal>
+      <Dependent Role="ClassroomDevice">
+        <PropertyRef Name="DeviceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FloorOfArea_Area">
+    <End Role="Area" Type="Self.Area" Multiplicity="1" />
+    <End Role="FloorOfArea" Type="Self.FloorOfArea" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Area">
+        <PropertyRef Name="AreaID" />
+      </Principal>
+      <Dependent Role="FloorOfArea">
+        <PropertyRef Name="AreaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DB_NCKHModelStoreContainer">
+    <EntitySet Name="Area" EntityType="Self.Area" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Classroom" EntityType="Self.Classroom" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ClassroomDevice" EntityType="Self.ClassroomDevice" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Device" EntityType="Self.Device" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FloorOfArea" EntityType="Self.FloorOfArea" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Classroom_FloorOfArea" Association="Self.FK_Classroom_FloorOfArea">
+      <End Role="FloorOfArea" EntitySet="FloorOfArea" />
+      <End Role="Classroom" EntitySet="Classroom" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClassroomDevice_Classroom" Association="Self.FK_ClassroomDevice_Classroom">
+      <End Role="Classroom" EntitySet="Classroom" />
+      <End Role="ClassroomDevice" EntitySet="ClassroomDevice" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClassroomDevice_Device" Association="Self.FK_ClassroomDevice_Device">
+      <End Role="Device" EntitySet="Device" />
+      <End Role="ClassroomDevice" EntitySet="ClassroomDevice" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FloorOfArea_Area" Association="Self.FK_FloorOfArea_Area">
+      <End Role="Area" EntitySet="Area" />
+      <End Role="FloorOfArea" EntitySet="FloorOfArea" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

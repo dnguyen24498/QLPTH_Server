@@ -1,0 +1,11 @@
+D:\Git\QuanLyPhongThucHanh\Model\bin\Debug\Model.dll.config
+D:\Git\QuanLyPhongThucHanh\Model\bin\Debug\Model.dll
+D:\Git\QuanLyPhongThucHanh\Model\bin\Debug\Model.pdb
+D:\Git\QuanLyPhongThucHanh\Model\bin\Debug\EntityFramework.dll
+D:\Git\QuanLyPhongThucHanh\Model\bin\Debug\EntityFramework.SqlServer.dll
+D:\Git\QuanLyPhongThucHanh\Model\bin\Debug\EntityFramework.xml
+D:\Git\QuanLyPhongThucHanh\Model\bin\Debug\EntityFramework.SqlServer.xml
+D:\Git\QuanLyPhongThucHanh\Model\obj\Debug\Model.csprojAssemblyReference.cache
+D:\Git\QuanLyPhongThucHanh\Model\obj\Debug\Model.csproj.CopyComplete
+D:\Git\QuanLyPhongThucHanh\Model\obj\Debug\Model.dll
+D:\Git\QuanLyPhongThucHanh\Model\obj\Debug\Model.pdb

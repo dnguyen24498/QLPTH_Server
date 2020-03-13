@@ -1,0 +1,222 @@
+﻿<UserControl x:Class="View.UCMainControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:View"
+             xmlns:ViewModel="clr-namespace:ViewModel;assembly=ViewModel"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             DataContext="{Binding Source={x:Static ViewModel:ViewModelLocator.UCMainControlViewModelStatic}}"
+             d:DesignHeight="694" d:DesignWidth="755">
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadedUCMainControl}">
+            </i:InvokeCommandAction>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="10"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.25*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <GroupBox Style="{x:Null}" Grid.Column="1" Margin="0 5 0 5" FontWeight="DemiBold">
+            <GroupBox.Header>
+                <StackPanel Orientation="Horizontal">
+                    <materialDesign:PackIcon Kind="AlphaPBox">
+                    </materialDesign:PackIcon>
+                    <TextBlock Text="Kiểm soát tiến trình máy khách" Margin="3 0 0 0"
+                               FontWeight="DemiBold"></TextBlock>
+                </StackPanel>
+            </GroupBox.Header>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="0.5*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <ListBox ScrollViewer.HorizontalScrollBarVisibility="Auto" Name="lbProcess"
+                         SelectedItem="{Binding SelectedProcess}"
+                         ItemsSource="{Binding ListProcess}"
+                         ScrollViewer.VerticalScrollBarVisibility="Disabled">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="MouseDoubleClick">
+                            <i:InvokeCommandAction Command="{Binding DeleteProcessCommand}"></i:InvokeCommandAction>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                    <ListBox.Resources>
+                        <Style TargetType="ListBoxItem">
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="Transparent"/>
+                                    <Setter Property="BorderBrush" Value="Transparent"></Setter>
+                                    <Setter Property="BorderThickness" Value="0"></Setter>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </ListBox.Resources>
+
+                    <ListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Height="35" Orientation="Horizontal"/>
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Border CornerRadius="8" BorderBrush="#E9EBEE"
+                                    BorderThickness="1" Background="#E9EBEE">
+                                <TextBlock Text="{Binding}" Padding="4"
+                                           FontWeight="Bold"></TextBlock>
+                            </Border>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+                <StackPanel Grid.Row="1" Orientation="Horizontal">
+                    <StackPanel.Resources>
+                        <Style TargetType="Button">
+                            <Setter Property="Foreground" Value="White"></Setter>
+                            <Setter Property="Margin" Value="0 0 0 0"></Setter>
+                            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+                            <Setter Property="Padding" Value="3"></Setter>
+                            <Setter Property="Background" Value="#006EE8"></Setter>
+                            <Setter Property="FontWeight" Value="Normal"></Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Foreground" Value="Black"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </StackPanel.Resources>
+                    <TextBlock VerticalAlignment="Center" Margin="5 0 0 0">Thêm tiến trình:</TextBlock>
+                    <TextBox Style="{x:Null}" Name="txtInputProcess"
+                             VerticalContentAlignment="Center"
+                             Width="120" Margin="5 0 5 0" Height="24"></TextBox>
+                    <Button  Width="55" 
+                        Command="{Binding AddProcessCommand}" 
+                        CommandParameter="{Binding ElementName=txtInputProcess}" 
+                        Content="Thêm">
+                    </Button>
+                    <RadioButton IsChecked="{Binding OpenOnlyProcess}" VerticalAlignment="Center" Margin="5 0 4 0"
+                                 Content="Chỉ được mở"></RadioButton>
+                    <RadioButton IsChecked="{Binding ProhibitProcess}" VerticalAlignment="Center" Margin="2 0 4 0"
+                                 Content="Cấm"></RadioButton>
+
+                    <RadioButton IsChecked="{Binding DisableControl}" VerticalAlignment="Center" Margin="2 0 4 0"
+                                 Content="Tắt kiểm soát"></RadioButton>
+                    <materialDesign:PackIcon Kind="ClockArrow" Height="24" Width="20" 
+                                             Foreground="Black" Margin="5 0 0 0"
+                                             VerticalAlignment="Center"></materialDesign:PackIcon>
+                    <TextBox Width="30" Height="24" Text="2" Name="tbInterval"
+                             Style="{x:Null}" HorizontalContentAlignment="Center"
+                             VerticalContentAlignment="Center"
+                             Margin="5 0 0 0"></TextBox>
+                    <TextBlock Text="giây" Margin="3 0 0 0" VerticalAlignment="Center"></TextBlock>
+                    <Button  Width="100" Margin="4 0 0 0"
+                        Command="{Binding ActionControlCommand}" 
+                        CommandParameter="{Binding ElementName=tbInterval}" 
+                        Content="Gửi lệnh">
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </GroupBox>
+        <GroupBox Grid.Row="1" Grid.Column="1" Style="{x:Null}" Margin="0 0 0 5">
+            <GroupBox.Header>
+                <StackPanel Orientation="Horizontal">
+                    <materialDesign:PackIcon Kind="Bell">
+                    </materialDesign:PackIcon>
+                    <TextBlock Text="Thông báo" Margin="3 0 0 0" FontWeight="DemiBold"></TextBlock>
+                </StackPanel>
+            </GroupBox.Header>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.08*"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Orientation="Horizontal" Margin="5 0 0 0">
+                        <ListBox Margin="6 0 0 0" VerticalAlignment="Center"
+                                 Height="28" Style="{StaticResource MaterialDesignToolToggleListBox}" SelectedIndex="{Binding SelectedView}">
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="SelectionChanged">
+                                    <i:InvokeCommandAction Command="{Binding ChangeViewNotificationCommand}"
+                                                           CommandParameter="{Binding ElementName=lbNotification}"></i:InvokeCommandAction>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                            <ListBoxItem>
+                                <StackPanel Orientation="Horizontal">
+                                    <materialDesign:PackIcon Kind="ViewList" VerticalAlignment="Center"
+                                             Foreground="#007ACC" Margin="0 0 3 0" Height="20" Width="20" ></materialDesign:PackIcon>
+                                    <TextBlock Text="Tất cả" FontWeight="DemiBold" Foreground="Black"></TextBlock>
+                                </StackPanel>
+                            </ListBoxItem>
+                            <ListBoxItem>
+                                <StackPanel Orientation="Horizontal">
+                                    <materialDesign:PackIcon Kind="InformationCircle" VerticalAlignment="Center"
+                                             Foreground="#007ACC" Margin="0 0 3 0" Height="20" Width="20" ></materialDesign:PackIcon>
+                                    <TextBlock Text="Hệ thống" FontWeight="DemiBold" Foreground="Black"></TextBlock>
+                                </StackPanel>
+                            </ListBoxItem>
+                            <ListBoxItem>
+                                <StackPanel Orientation="Horizontal">
+                                    <materialDesign:PackIcon Kind="UserSupervisorCircle" VerticalAlignment="Center"
+                                             Foreground="#007ACC" Margin="0 0 3 0" Height="20" Width="20" ></materialDesign:PackIcon>
+                                    <TextBlock Text="Người dùng" FontWeight="DemiBold" Foreground="Black"></TextBlock>
+                                </StackPanel>
+                            </ListBoxItem>
+                        </ListBox>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1"
+                        HorizontalAlignment="Right" Orientation="Horizontal">
+                        <TextBox Style="{x:Null}" Width="250" VerticalAlignment="Center"
+                             VerticalContentAlignment="Center" Padding="5 0 0 0"
+                             Height="24" Text="Tìm kiếm" Foreground="Gray"></TextBox>
+                        <Button Style="{x:Null}" Height="24" Background="White"
+                            Width="24" Margin="0 0 5 0">
+                            <materialDesign:PackIcon Kind="Search" Foreground="Gray"></materialDesign:PackIcon>
+                        </Button>
+                    </StackPanel>
+                </Grid>
+                <ListBox Grid.Column="1" Grid.Row="1"
+                         ScrollViewer.VerticalScrollBarVisibility="Auto" Name="lbNotification"
+                         Background="White" ItemsSource="{Binding ListNotification}"
+                         Margin="0 0 0 0" BorderThickness="0">
+                    <ListBox.Resources>
+                        <Style TargetType="ListBoxItem">
+                            <Setter Property="Height" Value="50"></Setter>
+                            <Setter Property="Margin" Value="2 1 2 0"></Setter>
+                        </Style>
+                    </ListBox.Resources>
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Border Width="700" Height="45"
+                                    BorderBrush="#EAEAEA" Background="#EAEAEA" BorderThickness="1" CornerRadius="6"> 
+                                <Grid Margin="3">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="30"></ColumnDefinition>
+                                        <ColumnDefinition Width="125"></ColumnDefinition>
+                                        <ColumnDefinition Width="10*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <materialDesign:PackIcon Kind="{Binding Type}" VerticalAlignment="Center"
+                                             Foreground="#007ACC" Margin="4 0 0 0" Height="20" Width="20" ></materialDesign:PackIcon>
+                                    <TextBlock Grid.Column="1" Text="{Binding Time}"
+                                           VerticalAlignment="Center" Margin="5 0 35 0"></TextBlock>
+                                    <TextBlock Margin="0 0 0 0" Text="{Binding Content}" TextWrapping="Wrap"
+                                           VerticalAlignment="Center" Grid.Column="2"></TextBlock>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</UserControl>

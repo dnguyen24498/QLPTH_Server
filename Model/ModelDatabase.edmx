@@ -1,0 +1,354 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DB_NCKHModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Area">
+          <Key>
+            <PropertyRef Name="AreaID" />
+          </Key>
+          <Property Name="AreaID" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="AreaName" Type="nvarchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Classroom">
+          <Key>
+            <PropertyRef Name="ClassroomID" />
+          </Key>
+          <Property Name="ClassroomID" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="ClassroomName" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="FLoorID" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="ClassroomStatus" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="ClassroomServerIPV4Address" Type="varchar" MaxLength="15" />
+          <Property Name="ClassroomPortNumber" Type="int" />
+        </EntityType>
+        <EntityType Name="ClassroomDevice">
+          <Key>
+            <PropertyRef Name="ClassroomID" />
+            <PropertyRef Name="DeviceID" />
+          </Key>
+          <Property Name="ClassroomID" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="DeviceID" Type="int" Nullable="false" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Device">
+          <Key>
+            <PropertyRef Name="DeviceID" />
+          </Key>
+          <Property Name="DeviceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DeviceName" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FloorOfArea">
+          <Key>
+            <PropertyRef Name="FloorID" />
+          </Key>
+          <Property Name="FloorID" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="FloorName" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="AreaID" Type="varchar" MaxLength="5" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <Association Name="FK_Classroom_FloorOfArea">
+          <End Role="FloorOfArea" Type="Self.FloorOfArea" Multiplicity="1" />
+          <End Role="Classroom" Type="Self.Classroom" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FloorOfArea">
+              <PropertyRef Name="FloorID" />
+            </Principal>
+            <Dependent Role="Classroom">
+              <PropertyRef Name="FLoorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ClassroomDevice_Classroom">
+          <End Role="Classroom" Type="Self.Classroom" Multiplicity="1" />
+          <End Role="ClassroomDevice" Type="Self.ClassroomDevice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Classroom">
+              <PropertyRef Name="ClassroomID" />
+            </Principal>
+            <Dependent Role="ClassroomDevice">
+              <PropertyRef Name="ClassroomID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ClassroomDevice_Device">
+          <End Role="Device" Type="Self.Device" Multiplicity="1" />
+          <End Role="ClassroomDevice" Type="Self.ClassroomDevice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Device">
+              <PropertyRef Name="DeviceID" />
+            </Principal>
+            <Dependent Role="ClassroomDevice">
+              <PropertyRef Name="DeviceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FloorOfArea_Area">
+          <End Role="Area" Type="Self.Area" Multiplicity="1" />
+          <End Role="FloorOfArea" Type="Self.FloorOfArea" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Area">
+              <PropertyRef Name="AreaID" />
+            </Principal>
+            <Dependent Role="FloorOfArea">
+              <PropertyRef Name="AreaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DB_NCKHModelStoreContainer">
+          <EntitySet Name="Area" EntityType="Self.Area" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Classroom" EntityType="Self.Classroom" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ClassroomDevice" EntityType="Self.ClassroomDevice" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Device" EntityType="Self.Device" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FloorOfArea" EntityType="Self.FloorOfArea" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Classroom_FloorOfArea" Association="Self.FK_Classroom_FloorOfArea">
+            <End Role="FloorOfArea" EntitySet="FloorOfArea" />
+            <End Role="Classroom" EntitySet="Classroom" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ClassroomDevice_Classroom" Association="Self.FK_ClassroomDevice_Classroom">
+            <End Role="Classroom" EntitySet="Classroom" />
+            <End Role="ClassroomDevice" EntitySet="ClassroomDevice" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ClassroomDevice_Device" Association="Self.FK_ClassroomDevice_Device">
+            <End Role="Device" EntitySet="Device" />
+            <End Role="ClassroomDevice" EntitySet="ClassroomDevice" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FloorOfArea_Area" Association="Self.FK_FloorOfArea_Area">
+            <End Role="Area" EntitySet="Area" />
+            <End Role="FloorOfArea" EntitySet="FloorOfArea" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DB_NCKHModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Area">
+          <Key>
+            <PropertyRef Name="AreaID" />
+          </Key>
+          <Property Name="AreaID" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AreaName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="FloorOfAreas" Relationship="Self.FK_FloorOfArea_Area" FromRole="Area" ToRole="FloorOfArea" />
+        </EntityType>
+        <EntityType Name="ClassroomDevice">
+          <Key>
+            <PropertyRef Name="ClassroomID" />
+            <PropertyRef Name="DeviceID" />
+          </Key>
+          <Property Name="ClassroomID" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DeviceID" Type="Int32" Nullable="false" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Device" Relationship="Self.FK_ClassroomDevice_Device" FromRole="ClassroomDevice" ToRole="Device" />
+          <NavigationProperty Name="Classroom" Relationship="DB_NCKHModel.FK_ClassroomDevice_Classroom" FromRole="ClassroomDevice" ToRole="Classroom" />
+        </EntityType>
+        <EntityType Name="Device">
+          <Key>
+            <PropertyRef Name="DeviceID" />
+          </Key>
+          <Property Name="DeviceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DeviceName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="ClassroomDevices" Relationship="Self.FK_ClassroomDevice_Device" FromRole="Device" ToRole="ClassroomDevice" />
+        </EntityType>
+        <EntityType Name="FloorOfArea">
+          <Key>
+            <PropertyRef Name="FloorID" />
+          </Key>
+          <Property Name="FloorID" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FloorName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AreaID" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Area" Relationship="Self.FK_FloorOfArea_Area" FromRole="FloorOfArea" ToRole="Area" />
+          <NavigationProperty Name="Classrooms" Relationship="DB_NCKHModel.FK_Classroom_FloorOfArea" FromRole="FloorOfArea" ToRole="Classroom" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_FloorOfArea_Area">
+          <End Role="Area" Type="Self.Area" Multiplicity="1" />
+          <End Role="FloorOfArea" Type="Self.FloorOfArea" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Area">
+              <PropertyRef Name="AreaID" />
+            </Principal>
+            <Dependent Role="FloorOfArea">
+              <PropertyRef Name="AreaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ClassroomDevice_Device">
+          <End Role="Device" Type="Self.Device" Multiplicity="1" />
+          <End Role="ClassroomDevice" Type="Self.ClassroomDevice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Device">
+              <PropertyRef Name="DeviceID" />
+            </Principal>
+            <Dependent Role="ClassroomDevice">
+              <PropertyRef Name="DeviceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DB_NCKHEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Areas" EntityType="Self.Area" />
+          <EntitySet Name="ClassroomDevices" EntityType="Self.ClassroomDevice" />
+          <EntitySet Name="Devices" EntityType="Self.Device" />
+          <EntitySet Name="FloorOfAreas" EntityType="Self.FloorOfArea" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <AssociationSet Name="FK_FloorOfArea_Area" Association="Self.FK_FloorOfArea_Area">
+            <End Role="Area" EntitySet="Areas" />
+            <End Role="FloorOfArea" EntitySet="FloorOfAreas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ClassroomDevice_Device" Association="Self.FK_ClassroomDevice_Device">
+            <End Role="Device" EntitySet="Devices" />
+            <End Role="ClassroomDevice" EntitySet="ClassroomDevices" />
+          </AssociationSet>
+          <EntitySet Name="Classrooms" EntityType="DB_NCKHModel.Classroom" />
+          <AssociationSet Name="FK_Classroom_FloorOfArea" Association="DB_NCKHModel.FK_Classroom_FloorOfArea">
+            <End Role="FloorOfArea" EntitySet="FloorOfAreas" />
+            <End Role="Classroom" EntitySet="Classrooms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ClassroomDevice_Classroom" Association="DB_NCKHModel.FK_ClassroomDevice_Classroom">
+            <End Role="Classroom" EntitySet="Classrooms" />
+            <End Role="ClassroomDevice" EntitySet="ClassroomDevices" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Classroom">
+          <Key>
+            <PropertyRef Name="ClassroomID" />
+          </Key>
+          <Property Name="ClassroomID" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="ClassroomName" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="FLoorID" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="ClassroomStatus" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ClassroomServerIPV4Address" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="ClassroomPortNumber" Type="Int32" />
+          <NavigationProperty Name="FloorOfArea" Relationship="DB_NCKHModel.FK_Classroom_FloorOfArea" FromRole="Classroom" ToRole="FloorOfArea" />
+          <NavigationProperty Name="ClassroomDevices" Relationship="DB_NCKHModel.FK_ClassroomDevice_Classroom" FromRole="Classroom" ToRole="ClassroomDevice" />
+        </EntityType>
+        <Association Name="FK_Classroom_FloorOfArea">
+          <End Type="DB_NCKHModel.FloorOfArea" Role="FloorOfArea" Multiplicity="1" />
+          <End Type="DB_NCKHModel.Classroom" Role="Classroom" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FloorOfArea">
+              <PropertyRef Name="FloorID" />
+            </Principal>
+            <Dependent Role="Classroom">
+              <PropertyRef Name="FLoorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ClassroomDevice_Classroom">
+          <End Type="DB_NCKHModel.Classroom" Role="Classroom" Multiplicity="1" />
+          <End Type="DB_NCKHModel.ClassroomDevice" Role="ClassroomDevice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Classroom">
+              <PropertyRef Name="ClassroomID" />
+            </Principal>
+            <Dependent Role="ClassroomDevice">
+              <PropertyRef Name="ClassroomID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DB_NCKHModelStoreContainer" CdmEntityContainer="DB_NCKHEntities">
+          <EntitySetMapping Name="Areas">
+            <EntityTypeMapping TypeName="DB_NCKHModel.Area">
+              <MappingFragment StoreEntitySet="Area">
+                <ScalarProperty Name="AreaID" ColumnName="AreaID" />
+                <ScalarProperty Name="AreaName" ColumnName="AreaName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ClassroomDevices">
+            <EntityTypeMapping TypeName="DB_NCKHModel.ClassroomDevice">
+              <MappingFragment StoreEntitySet="ClassroomDevice">
+                <ScalarProperty Name="ClassroomID" ColumnName="ClassroomID" />
+                <ScalarProperty Name="DeviceID" ColumnName="DeviceID" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Devices">
+            <EntityTypeMapping TypeName="DB_NCKHModel.Device">
+              <MappingFragment StoreEntitySet="Device">
+                <ScalarProperty Name="DeviceID" ColumnName="DeviceID" />
+                <ScalarProperty Name="DeviceName" ColumnName="DeviceName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FloorOfAreas">
+            <EntityTypeMapping TypeName="DB_NCKHModel.FloorOfArea">
+              <MappingFragment StoreEntitySet="FloorOfArea">
+                <ScalarProperty Name="FloorID" ColumnName="FloorID" />
+                <ScalarProperty Name="FloorName" ColumnName="FloorName" />
+                <ScalarProperty Name="AreaID" ColumnName="AreaID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="DB_NCKHModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Classrooms">
+            <EntityTypeMapping TypeName="DB_NCKHModel.Classroom">
+              <MappingFragment StoreEntitySet="Classroom">
+                <ScalarProperty Name="ClassroomPortNumber" ColumnName="ClassroomPortNumber" />
+                <ScalarProperty Name="ClassroomServerIPV4Address" ColumnName="ClassroomServerIPV4Address" />
+                <ScalarProperty Name="ClassroomStatus" ColumnName="ClassroomStatus" />
+                <ScalarProperty Name="FLoorID" ColumnName="FLoorID" />
+                <ScalarProperty Name="ClassroomName" ColumnName="ClassroomName" />
+                <ScalarProperty Name="ClassroomID" ColumnName="ClassroomID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

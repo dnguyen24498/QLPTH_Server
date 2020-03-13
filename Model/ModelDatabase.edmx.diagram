@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="36c1489c8f8f473c8a951c08e7d73c04" Name="Diagram1">
+        <EntityTypeShape EntityType="DB_NCKHModel.Area" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_NCKHModel.ClassroomDevice" Width="1.5" PointX="7.5" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_NCKHModel.Device" Width="1.5" PointX="5.25" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_NCKHModel.FloorOfArea" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_NCKHModel.sysdiagram" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <AssociationConnector Association="DB_NCKHModel.FK_FloorOfArea_Area" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_NCKHModel.FK_ClassroomDevice_Device" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DB_NCKHModel.Classroom" Width="1.5" PointX="5.25" PointY="1" />
+        <AssociationConnector Association="DB_NCKHModel.FK_Classroom_FloorOfArea" />
+        <AssociationConnector Association="DB_NCKHModel.FK_ClassroomDevice_Classroom" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
