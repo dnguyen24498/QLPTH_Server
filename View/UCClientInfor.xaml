@@ -25,9 +25,7 @@
                        VerticalAlignment="Center"></TextBlock>
             <TextBlock Text="{Binding NumbClientOnline}" Margin="5 0 0 0" FontWeight="DemiBold" Foreground="Black"
                        VerticalAlignment="Center"></TextBlock>
-            <TextBlock Text=" / " Margin="0 0 0 0" FontWeight="DemiBold" Foreground="Black"
-                       VerticalAlignment="Center"></TextBlock>
-            <TextBlock Text="{Binding TotalClient}" Margin="0 0 0 0" FontWeight="DemiBold" Foreground="Black"
+            <TextBlock Text=" máy" Margin="0 0 0 0" FontWeight="DemiBold" Foreground="Black"
                        VerticalAlignment="Center"></TextBlock>
         </StackPanel>
         <ListBox Grid.Row="1" ScrollViewer.VerticalScrollBarVisibility="Auto" 
@@ -78,11 +76,7 @@
                     </Style>
                 </StackPanel.Resources>
                 <materialDesign:PackIcon Kind="Circle" Foreground="#1AA15F"></materialDesign:PackIcon>
-                <TextBlock Text="Online" Foreground="Black"></TextBlock>
-                <materialDesign:PackIcon Kind="Circle" Foreground="#C3C4C2"></materialDesign:PackIcon>
-                <TextBlock Text="Offline" Foreground="Black"></TextBlock>
-                <materialDesign:PackIcon Kind="Circle" Foreground="#DD5044"></materialDesign:PackIcon>
-                <TextBlock Text="Sự cố" Foreground="Black"></TextBlock>
+                <TextBlock Text="Đang mở kết nối" Foreground="Black"></TextBlock>
             </StackPanel>
         </Grid>
         <StackPanel Grid.Row="3" Background="#F5F8FA"
@@ -105,12 +99,12 @@
                     <StackPanel.Resources>
                         <Style TargetType="Button">
                             <Setter Property="Foreground" Value="White"></Setter>
-                            <Setter Property="Margin" Value="5 0 0 0"></Setter>
+                            <Setter Property="Margin" Value="5 5 0 0"></Setter>
                             <Setter Property="VerticalAlignment" Value="Center"></Setter>
                             <Setter Property="Padding" Value="3"></Setter>
                             <Setter Property="Background" Value="#006EE8"></Setter>
                             <Setter Property="FontWeight" Value="Normal"></Setter>
-                            <Setter Property="Height" Value="30"></Setter>
+                            <Setter Property="Height" Value="25"></Setter>
                             <Style.Triggers>
                                 <Trigger Property="IsMouseOver" Value="True">
                                     <Setter Property="Foreground" Value="Black"/>
@@ -123,7 +117,7 @@
                         Content="Thực hiện">
                     </Button>
                     <Button Content="Hủy"
-                            Width="60" Margin="3 0 0 0"></Button>
+                            Width="60" Margin="3 5 0 0"></Button>
                 </StackPanel>
             </StackPanel>
         </StackPanel>

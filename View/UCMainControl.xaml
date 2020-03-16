@@ -23,19 +23,59 @@
             <ColumnDefinition Width="10"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="0.3*"></RowDefinition>
+            <RowDefinition></RowDefinition>
             <RowDefinition Height="0.25*"></RowDefinition>
-            <RowDefinition Height="1*"></RowDefinition>
         </Grid.RowDefinitions>
-        <GroupBox Style="{x:Null}" Grid.Column="1" Margin="0 5 0 5" FontWeight="DemiBold">
+        <GroupBox Style="{x:Null}" Grid.Column="1" Margin="0 3 0 0" FontWeight="DemiBold">
+            <GroupBox.Header>
+                <StackPanel Orientation="Horizontal">
+                    <materialDesign:PackIcon Kind="InformationCircle">
+                    </materialDesign:PackIcon>
+                    <TextBlock Text="Thông tin phòng" Margin="3 0 0 0"
+                               FontWeight="DemiBold"></TextBlock>
+                </StackPanel>
+            </GroupBox.Header>
+            <ListView ItemsSource="{Binding ListRoomDevice}">
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel/>
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="{Binding Device.DeviceIcon}" VerticalAlignment="Center"
+                                                     Margin="0 0 5 0"
+                                                     Height="30" Width="30"></materialDesign:PackIcon>
+                            <StackPanel>
+                                <TextBlock Text="{Binding Device.DeviceName}" HorizontalAlignment="Center"></TextBlock>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="K.Dụng: "></TextBlock>
+                                    <TextBlock Text="{Binding Quantity}"></TextBlock>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Sự cố: "></TextBlock>
+                                    <TextBlock Text="{Binding Broken}"></TextBlock>
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </GroupBox>
+        <GroupBox Style="{x:Null}" Grid.Column="1" Margin="0 2 0 0" Grid.Row="2" FontWeight="DemiBold">
             <GroupBox.Header>
                 <StackPanel Orientation="Horizontal">
                     <materialDesign:PackIcon Kind="AlphaPBox">
                     </materialDesign:PackIcon>
-                    <TextBlock Text="Kiểm soát tiến trình máy khách" Margin="3 0 0 0"
+                    <TextBlock Text="Kiểm soát" Margin="3 0 0 0"
                                FontWeight="DemiBold"></TextBlock>
                 </StackPanel>
             </GroupBox.Header>
-            <Grid>
+            <Grid >
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="0.5*"></RowDefinition>
@@ -124,7 +164,7 @@
                 </StackPanel>
             </Grid>
         </GroupBox>
-        <GroupBox Grid.Row="1" Grid.Column="1" Style="{x:Null}" Margin="0 0 0 5">
+        <GroupBox Grid.Row="1" Grid.Column="1" Style="{x:Null}" Margin="0 2 0 0">
             <GroupBox.Header>
                 <StackPanel Orientation="Horizontal">
                     <materialDesign:PackIcon Kind="Bell">
@@ -134,7 +174,7 @@
             </GroupBox.Header>
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="0.08*"></RowDefinition>
+                    <RowDefinition Height="0.12*"></RowDefinition>
                     <RowDefinition></RowDefinition>
                 </Grid.RowDefinitions>
                 <Grid>
@@ -185,10 +225,10 @@
                         </Button>
                     </StackPanel>
                 </Grid>
-                <ListBox Grid.Column="1" Grid.Row="1"
+                <ListBox Grid.Row="1"
                          ScrollViewer.VerticalScrollBarVisibility="Auto" Name="lbNotification"
                          Background="White" ItemsSource="{Binding ListNotification}"
-                         Margin="0 0 0 0" BorderThickness="0">
+                         Margin="0 4 0 0" BorderThickness="0">
                     <ListBox.Resources>
                         <Style TargetType="ListBoxItem">
                             <Setter Property="Height" Value="50"></Setter>

@@ -150,8 +150,11 @@ namespace ViewModel
         {
             Application.Current.Dispatcher.Invoke((Action)delegate
             {
-                ListClient.Remove(e);
-                NumbClientOnline = Server.Server.Instance.ListClient.Count();
+                if (ListClient.Contains(e))
+                {
+                    ListClient.Remove(e);
+                    NumbClientOnline = Server.Server.Instance.ListClient.Count();
+                }
             });
         }
 
@@ -159,8 +162,11 @@ namespace ViewModel
         {
             Application.Current.Dispatcher.Invoke((Action)delegate
             {
-                ListClient.Add(e);
-                NumbClientOnline = Server.Server.Instance.ListClient.Count();
+                if (!ListClient.Contains(e))
+                {
+                    ListClient.Add(e);
+                    NumbClientOnline = Server.Server.Instance.ListClient.Count();
+                }
             });
         }
         

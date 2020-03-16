@@ -26,6 +26,7 @@
     <Property Name="ClassroomID" Type="varchar" MaxLength="15" Nullable="false" />
     <Property Name="DeviceID" Type="int" Nullable="false" />
     <Property Name="Quantity" Type="int" Nullable="false" />
+    <Property Name="Broken" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Device">
     <Key>
@@ -33,6 +34,7 @@
     </Key>
     <Property Name="DeviceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="DeviceName" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="DeviceIcon" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="FloorOfArea">
     <Key>

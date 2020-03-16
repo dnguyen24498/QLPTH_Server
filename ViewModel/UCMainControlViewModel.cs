@@ -10,14 +10,23 @@ using System.Collections.ObjectModel;
 using System.Windows.Input;
 using System.Windows;
 using System.Windows.Controls;
-
+using Model;
 namespace ViewModel
 {
     public class UCMainControlViewModel : BaseViewModel
     {
         private ObservableCollection<MessageArgs> _systemNotification = new ObservableCollection<MessageArgs>();
         private ObservableCollection<MessageArgs> _userNotification = new ObservableCollection<MessageArgs>();
-
+        private ObservableCollection<ClassroomDevice> _listRoomDevice;
+        public ObservableCollection<ClassroomDevice> ListRoomDevice
+        {
+            get => _listRoomDevice;
+            set
+            {
+                _listRoomDevice = value;
+                OnPropertyChanged();
+            }
+        }
         public ICommand LoadedUCMainControl { get; set; }
 
         public ICommand AddProcessCommand { get; set; }
@@ -114,6 +123,7 @@ namespace ViewModel
               {
                   Server.Server.Instance.BroadcastNotification += Instance_BroadcastNotification;
                   ListProcess = Server.ManageSettings.GetListSettingProcess();
+                  getRoomDeviceAsync();
               });
             AddProcessCommand = new RelayCommand<TextBox>((p) => true, (p) =>
               {
@@ -165,6 +175,10 @@ namespace ViewModel
               });
         }
 
+        private async void getRoomDeviceAsync()
+        {
+            ListRoomDevice = await Task.Run(()=>new ObservableCollection<ClassroomDevice>(DataProvider.Ins.DB.ClassroomDevices.Where(x => x.ClassroomID.Equals(ManageSettings.RoomID)).ToList()));
+        }
 
         private int getInterval(string txt)
         {

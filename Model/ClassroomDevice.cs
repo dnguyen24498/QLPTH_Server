@@ -17,8 +17,9 @@ namespace Model
         public string ClassroomID { get; set; }
         public int DeviceID { get; set; }
         public int Quantity { get; set; }
+        public int Broken { get; set; }
     
-        public virtual Device Device { get; set; }
         public virtual Classroom Classroom { get; set; }
+        public virtual Device Device { get; set; }
     }
 }

@@ -99,32 +99,15 @@
                 <Menu IsMainMenu="True" Height="26">
                     <MenuItem Header="_Tài khoản" Template="{StaticResource VsOnline}" >
                         <MenuItem Header="_Đăng nhập" Template="{StaticResource VsMenuSub}" />
-                        <MenuItem Header="_Thông tin tài khoản" Template="{StaticResource VsMenuSub}" />
+                        <MenuItem Header="_Quản lý tài khoản" Template="{StaticResource VsMenuSub}" />
                         <MenuItem Header="_Đăng xuất" Template="{StaticResource VsMenuSub}" />
                     </MenuItem>
-                    <MenuItem Header="_Phòng" Template="{StaticResource VsOnline}">
-                        <MenuItem Header="_Chi tiết phòng" Template="{StaticResource VsMenuSub}" />
-                    </MenuItem>
-                    <MenuItem Header="_Thiết bị" Template="{StaticResource VsOnline}">
-                        <MenuItem Header="_Files" Template="{StaticResource VsMenuSub}" />
-                        <MenuItem Header="_Commits" Template="{StaticResource VsMenuSub}" />
-                        <MenuItem Header="_Pushes" Template="{StaticResource VsMenuSub}" />
-                    </MenuItem>
-                    <MenuItem Header="_Máy khách" Template="{StaticResource VsOnline}">
-                        <MenuItem Header="_Backlogs" Template="{StaticResource VsMenuSub}" Icon="icon_backlogs.png" />
-                        <MenuItem Header="_Queries" Template="{StaticResource VsMenuSub}" Icon="icon_queries.png" />
-                        <Separator Template="{StaticResource VsMenuSep}" />
-                        <MenuItem Header="_New Work Item" Template="{StaticResource VsMenuSub}">
-                            <MenuItem Header="_Epic" Template="{StaticResource VsMenuSub}" Icon="icon_epic.png" />
-                            <MenuItem Header="_Feature" Template="{StaticResource VsMenuSub}" Icon="icon_feature.png" />
-                            <MenuItem Header="_Issue" Template="{StaticResource VsMenuSub}" Icon="icon_issue.png" />
-                            <MenuItem Header="_Task" Template="{StaticResource VsMenuSub}" Icon="icon_task.png" />
-                            <MenuItem Header="_Test Case" Template="{StaticResource VsMenuSub}" Icon="icon_testcase.png" />
-                            <MenuItem Header="_User Story" Template="{StaticResource VsMenuSub}" Icon="icon_userstory.png" />
-                        </MenuItem>
-                        <MenuItem Header="_Bug" Template="{StaticResource VsMenuSub}" Icon="icon_bug.png" />
+                    <MenuItem Header="_Báo hỏng thiết bị" Template="{StaticResource VsOnline}">
+                        <MenuItem Header="_Báo hỏng" Template="{StaticResource VsMenuSub}" />
+                        <MenuItem Header="_Lịch sử báo hỏng" Template="{StaticResource VsMenuSub}" />
                     </MenuItem>
                     <MenuItem Header="_Cài đặt" Click="MenuItem_Click" Template="{StaticResource VsOnline}"></MenuItem>
+                    <MenuItem Header="_Trợ giúp" Click="MenuItem_Click" Template="{StaticResource VsOnline}"></MenuItem>
                 </Menu>
             </ToolBarOverflowPanel>
             <Grid Grid.Column="1" Background="Transparent"

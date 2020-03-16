@@ -22,6 +22,7 @@ namespace Model
     
         public int DeviceID { get; set; }
         public string DeviceName { get; set; }
+        public string DeviceIcon { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ClassroomDevice> ClassroomDevices { get; set; }

@@ -9,3 +9,14 @@ D:\Git\QuanLyPhongThucHanh\Model\obj\Debug\Model.csprojAssemblyReference.cache
 D:\Git\QuanLyPhongThucHanh\Model\obj\Debug\Model.csproj.CopyComplete
 D:\Git\QuanLyPhongThucHanh\Model\obj\Debug\Model.dll
 D:\Git\QuanLyPhongThucHanh\Model\obj\Debug\Model.pdb
+D:\Github\QLPTH_Server\Model\bin\Debug\Model.dll.config
+D:\Github\QLPTH_Server\Model\bin\Debug\Model.dll
+D:\Github\QLPTH_Server\Model\bin\Debug\Model.pdb
+D:\Github\QLPTH_Server\Model\bin\Debug\EntityFramework.dll
+D:\Github\QLPTH_Server\Model\bin\Debug\EntityFramework.SqlServer.dll
+D:\Github\QLPTH_Server\Model\bin\Debug\EntityFramework.xml
+D:\Github\QLPTH_Server\Model\bin\Debug\EntityFramework.SqlServer.xml
+D:\Github\QLPTH_Server\Model\obj\Debug\Model.csprojAssemblyReference.cache
+D:\Github\QLPTH_Server\Model\obj\Debug\Model.csproj.CopyComplete
+D:\Github\QLPTH_Server\Model\obj\Debug\Model.dll
+D:\Github\QLPTH_Server\Model\obj\Debug\Model.pdb

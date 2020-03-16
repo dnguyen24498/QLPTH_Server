@@ -140,7 +140,7 @@ namespace ViewModel
                   p.Close();
               });
         }
-
+        
         private void UpdateNewSettings()
         {
             Server.ManageSettings.PathSaveFile = PathSaveFile;
