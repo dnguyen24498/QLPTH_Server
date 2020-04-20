@@ -31,17 +31,13 @@ namespace ViewModel
         {
             Server.Server.Instance.BroadcastMessage += Instance_BroadcastMessage;
             Converstation = new ObservableCollection<MessageArgs>();
-            SendMessageCommand = new RelayCommand<TextBox>((p) =>
+            SendMessageCommand = new RelayCommand<TextBox>((p) =>true, (p) =>
             {
                 if (!string.IsNullOrEmpty(p.Text) && !string.IsNullOrWhiteSpace(p.Text))
                 {
-                    return true;
+                    Server.Server.Instance.SendMessage(p.Text);
+                    Converstation.Add(new MessageArgs(p.Text));
                 }
-                return false;
-            }, (p) =>
-            {
-                Server.Server.Instance.SendMessage(p.Text);
-                Converstation.Add(new MessageArgs(p.Text));
                 p.Clear();
                 p.Focus();
             });
