@@ -82,6 +82,12 @@
       <DependentUpon>ModelDatabase.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report.cs">
+      <DependentUpon>ModelDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SettingProcess.cs">
+      <DependentUpon>ModelDatabase.tt</DependentUpon>
+    </Compile>
     <Compile Include="sysdiagram.cs">
       <DependentUpon>ModelDatabase.tt</DependentUpon>
     </Compile>

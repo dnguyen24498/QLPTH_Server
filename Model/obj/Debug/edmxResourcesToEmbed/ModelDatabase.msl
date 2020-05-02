@@ -60,5 +60,25 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Reports">
+      <EntityTypeMapping TypeName="DB_NCKHModel.Report">
+        <MappingFragment StoreEntitySet="Report">
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="IsDone" ColumnName="IsDone" />
+          <ScalarProperty Name="DeviceID" ColumnName="DeviceID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ClassroomID" ColumnName="ClassroomID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SettingProcesses">
+      <EntityTypeMapping TypeName="DB_NCKHModel.SettingProcess">
+        <MappingFragment StoreEntitySet="SettingProcess">
+          <ScalarProperty Name="IconForeground" ColumnName="IconForeground" />
+          <ScalarProperty Name="ProcessIcon" ColumnName="ProcessIcon" />
+          <ScalarProperty Name="ProcessName" ColumnName="ProcessName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

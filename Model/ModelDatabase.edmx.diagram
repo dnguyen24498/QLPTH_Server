@@ -15,6 +15,10 @@
         <AssociationConnector Association="DB_NCKHModel.FK_Classroom_FloorOfArea" />
         <AssociationConnector Association="DB_NCKHModel.FK_ClassroomDevice_Classroom" />
         <AssociationConnector Association="DB_NCKHModel.FK_ClassroomDevice_Device" />
+        <EntityTypeShape EntityType="DB_NCKHModel.Report" Width="1.5" PointX="7.875" PointY="5" />
+        <EntityTypeShape EntityType="DB_NCKHModel.SettingProcess" Width="1.5" PointX="0.75" PointY="7.75" />
+        <AssociationConnector Association="DB_NCKHModel.FK_Report_Classroom" />
+        <AssociationConnector Association="DB_NCKHModel.FK_Report_Device" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

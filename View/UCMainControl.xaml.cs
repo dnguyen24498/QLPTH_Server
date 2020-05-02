@@ -35,5 +35,6 @@ namespace View
                 lbNotification.ScrollIntoView(e.NewItems[0]);
             }
         }
+
     }
 }

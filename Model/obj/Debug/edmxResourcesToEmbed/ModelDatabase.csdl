@@ -23,6 +23,16 @@
       <End Role="Device" EntitySet="Devices" />
       <End Role="ClassroomDevice" EntitySet="ClassroomDevices" />
     </AssociationSet>
+    <EntitySet Name="Reports" EntityType="DB_NCKHModel.Report" />
+    <EntitySet Name="SettingProcesses" EntityType="DB_NCKHModel.SettingProcess" />
+    <AssociationSet Name="FK_Report_Classroom" Association="DB_NCKHModel.FK_Report_Classroom">
+      <End Role="Classroom" EntitySet="Classrooms" />
+      <End Role="Report" EntitySet="Reports" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Report_Device" Association="DB_NCKHModel.FK_Report_Device">
+      <End Role="Device" EntitySet="Devices" />
+      <End Role="Report" EntitySet="Reports" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Area">
     <Key>
@@ -44,6 +54,7 @@
     <Property Name="ClassroomPortNumber" Type="Int32" />
     <NavigationProperty Name="FloorOfArea" Relationship="DB_NCKHModel.FK_Classroom_FloorOfArea" FromRole="Classroom" ToRole="FloorOfArea" />
     <NavigationProperty Name="ClassroomDevices" Relationship="DB_NCKHModel.FK_ClassroomDevice_Classroom" FromRole="Classroom" ToRole="ClassroomDevice" />
+    <NavigationProperty Name="Reports" Relationship="DB_NCKHModel.FK_Report_Classroom" FromRole="Classroom" ToRole="Report" />
   </EntityType>
   <EntityType Name="ClassroomDevice">
     <Key>
@@ -65,6 +76,7 @@
     <Property Name="DeviceName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
     <Property Name="DeviceIcon" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="ClassroomDevices" Relationship="DB_NCKHModel.FK_ClassroomDevice_Device" FromRole="Device" ToRole="ClassroomDevice" />
+    <NavigationProperty Name="Reports" Relationship="DB_NCKHModel.FK_Report_Device" FromRole="Device" ToRole="Report" />
   </EntityType>
   <EntityType Name="FloorOfArea">
     <Key>
@@ -130,6 +142,53 @@
         <PropertyRef Name="DeviceID" />
       </Principal>
       <Dependent Role="ClassroomDevice">
+        <PropertyRef Name="DeviceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Report">
+    <Key>
+      <PropertyRef Name="ClassroomID" />
+      <PropertyRef Name="DeviceID" />
+      <PropertyRef Name="IsDone" />
+      <PropertyRef Name="DateCreated" />
+    </Key>
+    <Property Name="ClassroomID" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="DeviceID" Type="Int32" Nullable="false" />
+    <Property Name="IsDone" Type="Boolean" Nullable="false" />
+    <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="Classroom" Relationship="DB_NCKHModel.FK_Report_Classroom" FromRole="Report" ToRole="Classroom" />
+    <NavigationProperty Name="Device" Relationship="DB_NCKHModel.FK_Report_Device" FromRole="Report" ToRole="Device" />
+  </EntityType>
+  <EntityType Name="SettingProcess">
+    <Key>
+      <PropertyRef Name="ProcessName" />
+    </Key>
+    <Property Name="ProcessName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ProcessIcon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IconForeground" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK_Report_Classroom">
+    <End Type="DB_NCKHModel.Classroom" Role="Classroom" Multiplicity="1" />
+    <End Type="DB_NCKHModel.Report" Role="Report" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Classroom">
+        <PropertyRef Name="ClassroomID" />
+      </Principal>
+      <Dependent Role="Report">
+        <PropertyRef Name="ClassroomID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Report_Device">
+    <End Type="DB_NCKHModel.Device" Role="Device" Multiplicity="1" />
+    <End Type="DB_NCKHModel.Report" Role="Report" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Device">
+        <PropertyRef Name="DeviceID" />
+      </Principal>
+      <Dependent Role="Report">
         <PropertyRef Name="DeviceID" />
       </Dependent>
     </ReferentialConstraint>

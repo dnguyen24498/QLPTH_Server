@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Git\QuanLyPhongThucHanh\View\obj\Debug\
+D:\Github\QLPTH_Server\View\obj\Debug\
 View
 none
 false
 DEBUG;TRACE
-D:\Git\QuanLyPhongThucHanh\View\App.xaml
-71418328699
+D:\Github\QLPTH_Server\View\App.xaml
+81632183784
 
-11-1419250971
-2195930374
-MainWindow.xaml;MyResource.xaml;SettingWindow.xaml;UCChatBox.xaml;UCMainControl.xaml;UCTabMenu.xaml;UCClientInfor.xaml;
+12225353698
+21952828683
+MainWindow.xaml;MyResource.xaml;ReportError.xaml;SettingWindow.xaml;UCChatBox.xaml;UCMainControl.xaml;UCTabMenu.xaml;UCClientInfor.xaml;
 
 True
 

@@ -20,6 +20,8 @@ namespace ViewModel
         public ICommand LoadedWindowCommand { get; set; }
         public ICommand SaveSettingsCommand { get; set; }
 
+        public ICommand CancelSettingsCommand { get; set; }
+
         private string _classroomID;
         public string ClassroomID
         {
@@ -137,6 +139,10 @@ namespace ViewModel
             SaveSettingsCommand = new RelayCommand<Window>((p) => true, (p) =>
               {
                   UpdateNewSettings();
+                  p.Close();
+              });
+            CancelSettingsCommand = new RelayCommand<Window>((p) => true, (p) =>
+              {
                   p.Close();
               });
         }

@@ -75,3 +75,5 @@ D:\Github\QLPTH_Server\ViewModel\obj\Debug\ViewModel.dll
 D:\Github\QLPTH_Server\ViewModel\obj\Debug\ViewModel.pdb
 D:\Github\QLPTH_Server\ViewModel\bin\Debug\Server.dll
 D:\Github\QLPTH_Server\ViewModel\bin\Debug\GeneralClass.dll
+D:\Github\QLPTH_Server\ViewModel\bin\Debug\Newtonsoft.Json.dll
+D:\Github\QLPTH_Server\ViewModel\bin\Debug\Newtonsoft.Json.xml

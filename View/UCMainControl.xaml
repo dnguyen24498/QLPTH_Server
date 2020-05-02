@@ -110,8 +110,12 @@
                         <DataTemplate>
                             <Border CornerRadius="8" BorderBrush="#E9EBEE"
                                     BorderThickness="1" Background="#E9EBEE">
-                                <TextBlock Text="{Binding}" Padding="4"
+                                <StackPanel Orientation="Horizontal">
+                                    <materialDesign:PackIcon Kind="{Binding Path=ProcessIcon}" Margin="3 0 3 0"
+                                                             Foreground="{Binding Path=IconForeground}" VerticalAlignment="Center"></materialDesign:PackIcon>
+                                    <TextBlock Text="{Binding Path=ProcessName}" Padding="0 4 4 4"
                                            FontWeight="Bold"></TextBlock>
+                                </StackPanel>
                             </Border>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
@@ -133,9 +137,16 @@
                         </Style>
                     </StackPanel.Resources>
                     <TextBlock VerticalAlignment="Center" Margin="5 0 0 0">Thêm tiến trình:</TextBlock>
-                    <TextBox Style="{x:Null}" Name="txtInputProcess"
-                             VerticalContentAlignment="Center"
-                             Width="120" Margin="5 0 5 0" Height="24"></TextBox>
+                    <ComboBox Style="{x:Null}" Name="txtInputProcess" IsEditable="True"
+                             VerticalContentAlignment="Center" DisplayMemberPath="ProcessName" 
+                             Width="120" Margin="5 0 5 0" Height="24">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="KeyUp">
+                                <i:InvokeCommandAction Command="{Binding PreviewKeyDownCommand}"
+                                                       CommandParameter="{Binding ElementName=txtInputProcess}"></i:InvokeCommandAction>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </ComboBox>
                     <Button  Width="55" 
                         Command="{Binding AddProcessCommand}" 
                         CommandParameter="{Binding ElementName=txtInputProcess}" 

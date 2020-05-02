@@ -44,6 +44,31 @@
     <Property Name="FloorName" Type="nvarchar" MaxLength="30" Nullable="false" />
     <Property Name="AreaID" Type="varchar" MaxLength="5" Nullable="false" />
   </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DB_NCKH.dbo.Report' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Report">
+    <Key>
+      <PropertyRef Name="ClassroomID" />
+      <PropertyRef Name="DeviceID" />
+      <PropertyRef Name="IsDone" />
+      <PropertyRef Name="DateCreated" />
+    </Key>
+    <Property Name="ClassroomID" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="200" />
+    <Property Name="DeviceID" Type="int" Nullable="false" />
+    <Property Name="IsDone" Type="bit" Nullable="false" />
+    <Property Name="DateCreated" Type="date" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DB_NCKH.dbo.SettingProcess' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="SettingProcess">
+    <Key>
+      <PropertyRef Name="ProcessName" />
+    </Key>
+    <Property Name="ProcessName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ProcessIcon" Type="varchar" MaxLength="50" />
+    <Property Name="IconForeground" Type="varchar" MaxLength="50" />
+  </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
       <PropertyRef Name="diagram_id" />
@@ -102,6 +127,30 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Report_Classroom">
+    <End Role="Classroom" Type="Self.Classroom" Multiplicity="1" />
+    <End Role="Report" Type="Self.Report" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Classroom">
+        <PropertyRef Name="ClassroomID" />
+      </Principal>
+      <Dependent Role="Report">
+        <PropertyRef Name="ClassroomID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Report_Device">
+    <End Role="Device" Type="Self.Device" Multiplicity="1" />
+    <End Role="Report" Type="Self.Report" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Device">
+        <PropertyRef Name="DeviceID" />
+      </Principal>
+      <Dependent Role="Report">
+        <PropertyRef Name="DeviceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="DB_NCKHModelStoreContainer">
     <EntitySet Name="Area" EntityType="Self.Area" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Classroom" EntityType="Self.Classroom" Schema="dbo" store:Type="Tables" />
@@ -109,6 +158,22 @@
     <EntitySet Name="Device" EntityType="Self.Device" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="FloorOfArea" EntityType="Self.FloorOfArea" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Report" EntityType="Self.Report" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Report].[ClassroomID] AS [ClassroomID], 
+    [Report].[Description] AS [Description], 
+    [Report].[DeviceID] AS [DeviceID], 
+    [Report].[IsDone] AS [IsDone], 
+    [Report].[DateCreated] AS [DateCreated]
+    FROM [dbo].[Report] AS [Report]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="SettingProcess" EntityType="Self.SettingProcess" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [SettingProcess].[ProcessName] AS [ProcessName], 
+    [SettingProcess].[ProcessIcon] AS [ProcessIcon], 
+    [SettingProcess].[IconForeground] AS [IconForeground]
+    FROM [dbo].[SettingProcess] AS [SettingProcess]</DefiningQuery>
+    </EntitySet>
     <AssociationSet Name="FK_Classroom_FloorOfArea" Association="Self.FK_Classroom_FloorOfArea">
       <End Role="FloorOfArea" EntitySet="FloorOfArea" />
       <End Role="Classroom" EntitySet="Classroom" />
@@ -124,6 +189,14 @@
     <AssociationSet Name="FK_FloorOfArea_Area" Association="Self.FK_FloorOfArea_Area">
       <End Role="Area" EntitySet="Area" />
       <End Role="FloorOfArea" EntitySet="FloorOfArea" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Report_Classroom" Association="Self.FK_Report_Classroom">
+      <End Role="Classroom" EntitySet="Classroom" />
+      <End Role="Report" EntitySet="Report" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Report_Device" Association="Self.FK_Report_Device">
+      <End Role="Device" EntitySet="Device" />
+      <End Role="Report" EntitySet="Report" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

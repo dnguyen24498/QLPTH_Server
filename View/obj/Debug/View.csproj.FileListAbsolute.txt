@@ -254,3 +254,7 @@ D:\Github\QLPTH_Server\View\obj\Debug\View.csproj.GenerateResource.cache
 D:\Github\QLPTH_Server\View\obj\Debug\View.csproj.CopyComplete
 D:\Github\QLPTH_Server\View\obj\Debug\View.exe
 D:\Github\QLPTH_Server\View\obj\Debug\View.pdb
+D:\Github\QLPTH_Server\View\obj\Debug\ReportError.g.cs
+D:\Github\QLPTH_Server\View\obj\Debug\ReportError.baml
+D:\Github\QLPTH_Server\View\bin\Debug\Newtonsoft.Json.dll
+D:\Github\QLPTH_Server\View\bin\Debug\Newtonsoft.Json.xml

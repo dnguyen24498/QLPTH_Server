@@ -35,6 +35,8 @@ namespace ViewModel
 
         public ICommand ActionControlCommand { get; set; }
 
+        public ICommand PreviewKeyDownCommand { get; set; }
+
         public ICommand ChangeViewNotificationCommand { get; set; }
 
         private bool _openOnlyProcess;
@@ -81,8 +83,8 @@ namespace ViewModel
             }
         }
 
-        private string _selectedProcess;
-        public string SelectedProcess
+        private SettingProcessArgs _selectedProcess;
+        public SettingProcessArgs SelectedProcess
         {
             get => _selectedProcess;
             set
@@ -92,8 +94,8 @@ namespace ViewModel
             }
         }
 
-        private ObservableCollection<string> _listProcess;
-        public ObservableCollection<string> ListProcess
+        private ObservableCollection<SettingProcessArgs> _listProcess;
+        public ObservableCollection<SettingProcessArgs> ListProcess
         {
             get => _listProcess;
             set
@@ -119,29 +121,35 @@ namespace ViewModel
             ListNotification = new ObservableCollection<MessageArgs>();
             DisableControl = true;
             SelectedView = 0;
-            LoadedUCMainControl = new RelayCommand<object>((p) => true, (p) =>
+            LoadedUCMainControl = new RelayCommand<object>((p) => true, async (p) =>
               {
+                  await getRoomDeviceAsync();
                   Server.Server.Instance.BroadcastNotification += Instance_BroadcastNotification;
                   ListProcess = Server.ManageSettings.GetListSettingProcess();
-                  getRoomDeviceAsync();
               });
-            AddProcessCommand = new RelayCommand<TextBox>((p) => true, (p) =>
+            AddProcessCommand = new RelayCommand<ComboBox>((p) => true, (p) =>
               {
-                  if (!string.IsNullOrEmpty(p.Text) && !string.IsNullOrWhiteSpace(p.Text))
+                  if (p.SelectedIndex != -1)
                   {
-                      Server.ManageSettings.AddSettingProcess(p.Text);
+                      SettingProcess settingProcess = p.SelectedItem as SettingProcess;
+                      SettingProcessArgs settingProcessArgs = new SettingProcessArgs
+                      {
+                          ProcessName = settingProcess.ProcessName,
+                          ProcessIcon = settingProcess.ProcessIcon,
+                          IconForeground = settingProcess.IconForeground
+                      };
+                      Server.ManageSettings.AddSettingProcess(settingProcessArgs);
                       ListProcess = Server.ManageSettings.GetListSettingProcess();
                   }
-                  p.Clear();
               });
             DeleteProcessCommand = new RelayCommand<object>((p) => true, (p) =>
               {
-                  if (!string.IsNullOrEmpty(SelectedProcess))
+                  if (SelectedProcess != null)
                   {
                       Server.ManageSettings.RemoveSettingProcess(SelectedProcess);
                       ListProcess = Server.ManageSettings.GetListSettingProcess();
                   }
-                      
+
               });
             ActionControlCommand = new RelayCommand<TextBox>((p) => true, (p) =>
               {
@@ -168,16 +176,50 @@ namespace ViewModel
                   {
                       p.ItemsSource = _systemNotification;
                   }
-                  else if(SelectedView==2)
+                  else if (SelectedView == 2)
                   {
                       p.ItemsSource = _userNotification;
                   }
               });
+
+            PreviewKeyDownCommand = new RelayCommand<ComboBox>((p) =>
+            {
+                if (!string.IsNullOrEmpty(p.Text))
+                {
+                    return true;
+                }
+                p.ItemsSource = null;
+                p.IsDropDownOpen = false;
+                return false;
+            }, async (p) =>
+              {
+                  List<SettingProcess> settingProcesses = await GetSettingProcessArgs(p.Text);
+                  if (settingProcesses != null)
+                  {
+                      p.ItemsSource = settingProcesses;
+                      p.IsDropDownOpen = true;
+                      return;
+                  }
+                  p.ItemsSource = null;
+                  p.IsDropDownOpen = false;
+
+              });
         }
 
-        private async void getRoomDeviceAsync()
+
+        private async Task<List<SettingProcess>> GetSettingProcessArgs(string processName)
         {
-            ListRoomDevice = await Task.Run(()=>new ObservableCollection<ClassroomDevice>(DataProvider.Ins.DB.ClassroomDevices.Where(x => x.ClassroomID.Equals(ManageSettings.RoomID)).ToList()));
+            var result = await Task.Run(() => DataProvider.Ins.DB.SettingProcesses.Where(x => x.ProcessName.Contains(processName.ToLower())).ToList()) ?? null;
+            if (result.Count > 0)
+            {
+                return result;
+            }
+            return null;
+        }
+
+        private async Task getRoomDeviceAsync()
+        {
+            ListRoomDevice = await Task.Run(() => new ObservableCollection<ClassroomDevice>(DataProvider.Ins.DB.ClassroomDevices.Where(x => x.ClassroomID.Equals(ManageSettings.RoomID)).ToList()));
         }
 
         private int getInterval(string txt)
@@ -211,7 +253,7 @@ namespace ViewModel
                     _userNotification.Add(e);
                 }
             });
-           
+
         }
     }
 }

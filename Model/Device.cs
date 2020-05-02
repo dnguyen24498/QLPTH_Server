@@ -18,6 +18,7 @@ namespace Model
         public Device()
         {
             this.ClassroomDevices = new HashSet<ClassroomDevice>();
+            this.Reports = new HashSet<Report>();
         }
     
         public int DeviceID { get; set; }
@@ -26,5 +27,7 @@ namespace Model
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ClassroomDevice> ClassroomDevices { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Report> Reports { get; set; }
     }
 }
