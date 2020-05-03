@@ -8,7 +8,7 @@
     <ProjectGuid>{524056BC-4C98-457D-8929-42C445183BF1}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>View</RootNamespace>
-    <AssemblyName>View</AssemblyName>
+    <AssemblyName>ServerManagement</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -95,6 +95,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="LoadingCircle.xaml.cs">
+      <DependentUpon>LoadingCircle.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ReportError.xaml.cs">
       <DependentUpon>ReportError.xaml</DependentUpon>
     </Compile>
@@ -113,6 +116,10 @@
     <Compile Include="UCClientInfor.xaml.cs">
       <DependentUpon>UCClientInfor.xaml</DependentUpon>
     </Compile>
+    <Page Include="LoadingCircle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

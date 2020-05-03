@@ -148,14 +148,18 @@ namespace ViewModel
 
         private void Instance_ClientDisconnect(object sender, Client e)
         {
-            Application.Current.Dispatcher.Invoke((Action)delegate
+            try
             {
-                if (ListClient.Contains(e))
+                Application.Current.Dispatcher.Invoke((Action)delegate
                 {
-                    ListClient.Remove(e);
-                    NumbClientOnline = Server.Server.Instance.ListClient.Count();
-                }
-            });
+                    if (ListClient.Contains(e))
+                    {
+                        ListClient.Remove(e);
+                        NumbClientOnline = ListClient.Count();
+                    }
+                });
+            }
+            catch { }
         }
 
         private void Instance_ClientConnect(object sender, Client e)

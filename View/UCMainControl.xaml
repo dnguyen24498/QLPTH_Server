@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:View"
              xmlns:ViewModel="clr-namespace:ViewModel;assembly=ViewModel"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-             mc:Ignorable="d" 
+             mc:Ignorable="d" Name="ServerManagement"
              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              DataContext="{Binding Source={x:Static ViewModel:ViewModelLocator.UCMainControlViewModelStatic}}"
              d:DesignHeight="694" d:DesignWidth="755">

@@ -11,6 +11,10 @@ using VMHelper;
 using Server;
 using GeneralClass;
 using Model;
+using System.IO;
+using System.Windows.Media.Imaging;
+using System.Diagnostics;
+
 namespace ViewModel
 {
     public class MainWindowViewModel:BaseViewModel
@@ -73,9 +77,11 @@ namespace ViewModel
             FloorName = "--";
             ClassroomName = "--";
             ClassroomStatus = "--";
-            LoadedWindowCommand = new RelayCommand<object>((p) => true, (p) => {
+            Server.Server.Instance.ReceivedScreenCapture += Instance_ReceivedScreenCapture;
+            LoadedWindowCommand = new RelayCommand<Grid>((p) => true, (p) => {
                 GenerateServer();
-                updateRoomInformationAsync();
+                updateRoomInformationAsync(p);
+
             });
             ClosedWindowCommand = new RelayCommand<object>((p) => true, (p) => {
                 Server.Server.Instance.Close();
@@ -83,16 +89,27 @@ namespace ViewModel
 
         }
 
+        private void Instance_ReceivedScreenCapture(object sender, FileInfoArgs e)
+        {
+            if (File.Exists(e.FilePath))
+            {
+                Process.Start(e.FilePath);
+            }
+        }
+
+
         private void GenerateServer()
         {
             Server.Server.Instance.Start();
             Server.Server.Instance.BroadcastNotification += Instance_BroadcastNotification;
         }
 
-        private async void updateRoomInformationAsync()
+        private async void updateRoomInformationAsync(Grid p)
         {
+            p.Visibility = Visibility.Visible;
             GenerateNotification.ShowNoti("Thông báo mới", "Đang kết nối tới máy chủ dữ liệu...", Notifications.Wpf.NotificationType.Information);
             await Task.Run(() => getAndUpdateRoomInformationFromDB());
+            p.Visibility = Visibility.Hidden;
         }
 
         private void getAndUpdateRoomInformationFromDB()

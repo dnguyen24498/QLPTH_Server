@@ -52,7 +52,7 @@ namespace View {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/View;component/reporterror.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/ServerManagement;component/reporterror.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\ReportError.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

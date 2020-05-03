@@ -74,7 +74,7 @@
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
             <i:InvokeCommandAction Command="{Binding LoadedWindowCommand}"
-                                   CommandParameter="{Binding ElementName=grMainArea}"></i:InvokeCommandAction>
+                                   CommandParameter="{Binding ElementName=grLoading}"></i:InvokeCommandAction>
         </i:EventTrigger>
         <i:EventTrigger EventName="Closed">
             <i:InvokeCommandAction Command="{Binding ClosedWindowCommand}"></i:InvokeCommandAction>
@@ -259,7 +259,10 @@
             </Grid>
             <Rectangle VerticalAlignment="Stretch" Fill="#E0E3E7" Width="1" 
                        HorizontalAlignment="Right" Grid.Column="0"/>
-            <Grid Grid.Column="1" Background="White">
+            <Grid Grid.Column="1" Background="White" Panel.ZIndex="1" Name="grLoading">
+                <local:LoadingCircle></local:LoadingCircle>
+            </Grid>
+            <Grid Grid.Column="1" Background="White" Name="grMainArea" Panel.ZIndex="0">
                 <local:UCMainControl></local:UCMainControl>
             </Grid>
         </Grid>

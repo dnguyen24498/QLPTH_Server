@@ -113,7 +113,7 @@ namespace View {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/View;component/settingwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/ServerManagement;component/settingwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\SettingWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

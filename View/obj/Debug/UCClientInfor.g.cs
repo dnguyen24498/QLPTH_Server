@@ -73,7 +73,7 @@ namespace View {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/View;component/ucclientinfor.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/ServerManagement;component/ucclientinfor.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\UCClientInfor.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
