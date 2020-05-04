@@ -95,6 +95,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Converter\RowToIndexConverter.cs" />
     <Compile Include="LoadingCircle.xaml.cs">
       <DependentUpon>LoadingCircle.xaml</DependentUpon>
     </Compile>
@@ -109,6 +110,9 @@
     </Compile>
     <Compile Include="UCMainControl.xaml.cs">
       <DependentUpon>UCMainControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UCReportError.xaml.cs">
+      <DependentUpon>UCReportError.xaml</DependentUpon>
     </Compile>
     <Compile Include="UCTabMenu.xaml.cs">
       <DependentUpon>UCTabMenu.xaml</DependentUpon>
@@ -149,6 +153,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UCMainControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UCReportError.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

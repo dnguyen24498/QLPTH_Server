@@ -88,5 +88,11 @@ namespace View
             SettingWindow settingWindow = new SettingWindow();
             settingWindow.Show();
         }
+
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        {
+            UCReportError uCReportError = new UCReportError();
+            uCReportError.Show();
+        }
     }
 }

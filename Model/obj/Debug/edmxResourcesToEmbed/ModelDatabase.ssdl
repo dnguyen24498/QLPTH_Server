@@ -44,15 +44,11 @@
     <Property Name="FloorName" Type="nvarchar" MaxLength="30" Nullable="false" />
     <Property Name="AreaID" Type="varchar" MaxLength="5" Nullable="false" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'DB_NCKH.dbo.Report' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="Report">
     <Key>
-      <PropertyRef Name="ClassroomID" />
-      <PropertyRef Name="DeviceID" />
-      <PropertyRef Name="IsDone" />
-      <PropertyRef Name="DateCreated" />
+      <PropertyRef Name="ReportID" />
     </Key>
+    <Property Name="ReportID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ClassroomID" Type="varchar" MaxLength="15" Nullable="false" />
     <Property Name="Description" Type="nvarchar" MaxLength="200" />
     <Property Name="DeviceID" Type="int" Nullable="false" />
@@ -157,16 +153,8 @@ warning 6002: The table/view 'DB_NCKH.dbo.SettingProcess' does not have a primar
     <EntitySet Name="ClassroomDevice" EntityType="Self.ClassroomDevice" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Device" EntityType="Self.Device" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="FloorOfArea" EntityType="Self.FloorOfArea" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Report" EntityType="Self.Report" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Report" EntityType="Self.Report" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [Report].[ClassroomID] AS [ClassroomID], 
-    [Report].[Description] AS [Description], 
-    [Report].[DeviceID] AS [DeviceID], 
-    [Report].[IsDone] AS [IsDone], 
-    [Report].[DateCreated] AS [DateCreated]
-    FROM [dbo].[Report] AS [Report]</DefiningQuery>
-    </EntitySet>
     <EntitySet Name="SettingProcess" EntityType="Self.SettingProcess" store:Type="Tables" store:Schema="dbo">
       <DefiningQuery>SELECT 
     [SettingProcess].[ProcessName] AS [ProcessName], 

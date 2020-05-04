@@ -260,3 +260,5 @@ D:\Github\QLPTH_Server\View\obj\Debug\ServerManagement.exe
 D:\Github\QLPTH_Server\View\obj\Debug\ServerManagement.pdb
 D:\Github\QLPTH_Server\View\obj\Debug\LoadingCircle.g.cs
 D:\Github\QLPTH_Server\View\obj\Debug\LoadingCircle.baml
+D:\Github\QLPTH_Server\View\obj\Debug\UCReportError.g.cs
+D:\Github\QLPTH_Server\View\obj\Debug\UCReportError.baml

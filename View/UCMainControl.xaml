@@ -30,13 +30,13 @@
         <GroupBox Style="{x:Null}" Grid.Column="1" Margin="0 3 0 0" FontWeight="DemiBold">
             <GroupBox.Header>
                 <StackPanel Orientation="Horizontal">
-                    <materialDesign:PackIcon Kind="InformationCircle">
+                    <materialDesign:PackIcon Kind="ImportantDevices">
                     </materialDesign:PackIcon>
-                    <TextBlock Text="Thông tin phòng" Margin="3 0 0 0"
+                    <TextBlock Text="Thông tin thiết bị phòng" Margin="3 0 0 0"
                                FontWeight="DemiBold"></TextBlock>
                 </StackPanel>
             </GroupBox.Header>
-            <ListView ItemsSource="{Binding ListRoomDevice}">
+            <ListView ItemsSource="{Binding ListRoomDevice}" VerticalAlignment="Center">
                 <ListView.ItemsPanel>
                     <ItemsPanelTemplate>
                         <WrapPanel/>
@@ -45,7 +45,7 @@
 
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <StackPanel Orientation="Horizontal">
+                        <StackPanel Orientation="Horizontal" Margin="5 0 0 0">
                             <materialDesign:PackIcon Kind="{Binding Device.DeviceIcon}" VerticalAlignment="Center"
                                                      Margin="0 0 5 0"
                                                      Height="30" Width="30"></materialDesign:PackIcon>
@@ -236,6 +236,28 @@
                         </Button>
                     </StackPanel>
                 </Grid>
+                <Grid Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Panel.ZIndex="1">
+                    <Grid.Resources>
+                        <Style TargetType="StackPanel">
+                            <Setter Property="Visibility" Value="Hidden"></Setter>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Path=NumbNotification}" Value="0">
+                                    <Setter Property="Visibility" Value="Visible"></Setter>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Grid.Resources>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <StackPanel>
+                        <materialDesign:PackIcon Kind="BellOff" Foreground="Gray" HorizontalAlignment="Center"
+                                             Width="50" Height="50"></materialDesign:PackIcon>
+                        <TextBlock Text="Không có thông báo" Grid.Row="1" Foreground="Gray"
+                               FontWeight="DemiBold"></TextBlock>
+                    </StackPanel>
+                </Grid>
                 <ListBox Grid.Row="1"
                          ScrollViewer.VerticalScrollBarVisibility="Auto" Name="lbNotification"
                          Background="White" ItemsSource="{Binding ListNotification}"
@@ -249,7 +271,7 @@
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <Border Width="700" Height="45"
-                                    BorderBrush="#EAEAEA" Background="#EAEAEA" BorderThickness="1" CornerRadius="6"> 
+                                    BorderBrush="#EAEAEA" Background="#EAEAEA" BorderThickness="1" CornerRadius="6">
                                 <Grid Margin="3">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="30"></ColumnDefinition>

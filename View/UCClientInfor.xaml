@@ -28,6 +28,29 @@
             <TextBlock Text=" máy" Margin="0 0 0 0" FontWeight="DemiBold" Foreground="Black"
                        VerticalAlignment="Center"></TextBlock>
         </StackPanel>
+        <Grid Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.Resources>
+                <Style TargetType="StackPanel">
+                    <Setter Property="Visibility" Value="Hidden"></Setter>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Path=NumbClientOnline}" Value="0">
+                            <Setter Property="Visibility" Value="Visible"></Setter>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Grid.Resources>
+            <StackPanel>
+                <materialDesign:PackIcon Kind="Blinky" Height="50" Width="50" Foreground="Gray"
+                                     HorizontalAlignment="Center"></materialDesign:PackIcon>
+                <TextBlock Grid.Row="1" Text="Không có máy online" Foreground="Gray"
+                   FontWeight="DemiBold" HorizontalAlignment="Center"
+                   VerticalAlignment="Center"></TextBlock>
+            </StackPanel>
+        </Grid>
         <ListBox Grid.Row="1" ScrollViewer.VerticalScrollBarVisibility="Auto" 
                  SelectedItem="{Binding SelectedClient}" Name="listBoxClients"
                  BorderThickness="0" BorderBrush="Transparent" 

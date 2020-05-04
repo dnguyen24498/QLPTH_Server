@@ -27,6 +27,16 @@ namespace ViewModel
                 OnPropertyChanged();
             }
         }
+        private int numbMessage;
+        public int NumbMessage
+        {
+            get => numbMessage;
+            set
+            {
+                numbMessage = value;
+                OnPropertyChanged();
+            }
+        }
         public UCChatBoxViewModel()
         {
             Server.Server.Instance.BroadcastMessage += Instance_BroadcastMessage;
@@ -40,6 +50,7 @@ namespace ViewModel
                 }
                 p.Clear();
                 p.Focus();
+                NumbMessage += 1;
             });
             SendFileCommand = new RelayCommand<object>((p) => true, (p) =>
               {
@@ -57,6 +68,7 @@ namespace ViewModel
             Application.Current.Dispatcher.Invoke((Action)delegate
             {
                 Converstation.Add(e);
+                NumbMessage += 1;
             });
         }
     }

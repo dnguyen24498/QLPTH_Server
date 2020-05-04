@@ -30,8 +30,8 @@ namespace Model
         public virtual DbSet<ClassroomDevice> ClassroomDevices { get; set; }
         public virtual DbSet<Device> Devices { get; set; }
         public virtual DbSet<FloorOfArea> FloorOfAreas { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<Report> Reports { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<SettingProcess> SettingProcesses { get; set; }
     }
 }

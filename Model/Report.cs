@@ -14,6 +14,7 @@ namespace Model
     
     public partial class Report
     {
+        public int ReportID { get; set; }
         public string ClassroomID { get; set; }
         public string Description { get; set; }
         public int DeviceID { get; set; }

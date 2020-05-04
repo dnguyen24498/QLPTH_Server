@@ -17,19 +17,19 @@
             <i:InvokeCommandAction Command="{Binding LoadedWindowCommand}"></i:InvokeCommandAction>
         </i:EventTrigger>
     </i:Interaction.Triggers>
-    <Grid Background="#282D31">
+    <Grid Background="#1976D2">
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="0.4*"></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <StackPanel Background="#282D31">
+            <StackPanel Background="#1976D2" Margin="5">
                 <StackPanel.Resources>
                     <Style TargetType="Button" >
                         <Setter Property="Height" Value="40"></Setter>
                         <Setter Property="Margin" Value="1"></Setter>
                         <Setter Property="FontWeight" Value="Normal"></Setter>
-                        <Setter Property="Background" Value="#282D31"></Setter>
+                        <Setter Property="Background" Value="#1976D2"></Setter> 
                         <Setter Property="Foreground" Value="White"></Setter>
                         <Setter Property="BorderThickness" Value="0"></Setter>
                         <Setter Property="Template">
@@ -44,47 +44,54 @@
                         </Setter>
                         <Style.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#006EE8"/>
+                                <Setter Property="Background" Value="#3FC98F"/>
                             </Trigger>
                         </Style.Triggers>
 
                     </Style>
                 </StackPanel.Resources>
+                <Button IsEnabled="False" BorderThickness="0 0 0 1" Background="#2AA86B" BorderBrush="Gray">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="Settings"></materialDesign:PackIcon>
+                        <TextBlock Margin="3 0 0 0" Text="Cài đặt"></TextBlock>
+                    </StackPanel>
+                </Button>
                 <Button Name="btnKetNoi" Click="btnKetNoi_Click" Content="Kết nối"></Button>
                 <Button x:Name="btnThongBao" Click="btnThongBao_Click" Content="Thông báo"></Button>
                 <Button Name="btnFile" Click="btnFile_Click" Content="File &amp; Đường dẫn"></Button>
-                <Button Content="Tin nhắn"></Button>
                 <Button Content="Giới thiệu"></Button>
-                <TextBlock Foreground="White"
-                    Margin="0 50 0 0" HorizontalAlignment="Center" TextWrapping="Wrap"
-                    Text="Phiên bản v0.0.1" FontWeight="DemiBold"></TextBlock>
-                
+
             </StackPanel>
+            <TextBlock Foreground="White" VerticalAlignment="Bottom"
+                    Margin="0 0 0 10" HorizontalAlignment="Center" TextWrapping="Wrap"
+                    Text="Phiên bản v0.0.1" FontWeight="DemiBold"></TextBlock>
             <Grid Grid.Column="1">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="8*"></RowDefinition>
                     <RowDefinition></RowDefinition>
                 </Grid.RowDefinitions>
-                <ListBox Name="lbSettings" Background="#282D31" VerticalAlignment="Top" Height="260" Foreground="White"
+                <ListBox Name="lbSettings" Background="#1976D2" VerticalAlignment="Top" Margin="5"
+                         Height="260" Foreground="White"
                     ScrollViewer.VerticalScrollBarVisibility="Auto">
-                    <ListBox.ItemContainerStyle>
-                        <Style TargetType="{x:Type ListBoxItem}" >
+                    <ListBox.Resources>
+                        <Style TargetType="ListBoxItem" >
                             <Setter Property="Margin" Value="3 3 0 0"></Setter>
                             <Setter Property="BorderThickness" Value="0"></Setter>
                             <Style.Triggers>
                                 <Trigger Property="IsMouseOver" Value="True">
-                                    <Setter Property="Background" Value="#282D31"/>
+                                    <Setter Property="Background" Value="Transparent"/>
                                 </Trigger>
                             </Style.Triggers>
 
                         </Style>
-                    </ListBox.ItemContainerStyle>
+                    </ListBox.Resources>
                     <ListBoxItem>
                         <StackPanel Width="420" Margin="5 5 0 0">
                             <StackPanel Orientation="Horizontal">
                                 <materialDesign:PackIcon Kind="LanConnect" 
                                                          VerticalAlignment="Center"></materialDesign:PackIcon>
-                                <TextBlock Margin="2 0 0 0" FontSize="13" Text="Kết nối (Quản trị viên)"></TextBlock>
+                                <TextBlock Margin="2 0 0 0" FontSize="14" FontWeight="DemiBold" 
+                                           Text="Kết nối (Quản trị viên)"></TextBlock>
                             </StackPanel>
                             <StackPanel Margin="5 4 0 0">
                                 <Grid Margin="0 10 0 0">
@@ -112,7 +119,7 @@
                                         <ColumnDefinition></ColumnDefinition>
                                     </Grid.ColumnDefinitions>
                                     <TextBlock Text="Cổng kết nối:"></TextBlock>
-                                    <TextBox Grid.Column="1" Width="50"  Name="tbPort" Text="{Binding Port}"
+                                    <TextBox Grid.Column="1" Width="100"  Name="tbPort" Text="{Binding Port}"
                                              Style="{x:Null}" HorizontalAlignment="Left"></TextBox>
                                 </Grid>
                                 <Grid Margin="0 10 0 10">
@@ -124,7 +131,7 @@
                                     <StackPanel Orientation="Horizontal" Grid.Column="1">
                                         <TextBox Grid.Column="1" Width="100" Text="{Binding ClassroomID}"
                                              Style="{x:Null}" HorizontalAlignment="Left"></TextBox>
-                                        <Button Content="Cập nhật" Background="#006EE8"
+                                        <Button Content="Cập nhật" Background="#2AA86B"
                                                 Margin="5 0 0 0" Foreground="White" Width="80"
                                                 Style="{x:Null}"></Button>
                                     </StackPanel>
@@ -138,7 +145,7 @@
                             <StackPanel Orientation="Horizontal">
                                 <materialDesign:PackIcon Kind="BellOutline" 
                                                          VerticalAlignment="Center"></materialDesign:PackIcon>
-                                <TextBlock Text="Thông báo" FontSize="13" Margin="2 0 0 0"></TextBlock>
+                                <TextBlock Text="Thông báo" FontSize="14" FontWeight="DemiBold" Margin="2 0 0 0"></TextBlock>
                             </StackPanel>
                             <StackPanel Margin="5 4 0 0">
                                 <CheckBox Margin="0 10 0 0" IsChecked="{Binding NotificationSound,Mode=TwoWay}"
@@ -153,7 +160,7 @@
                             <StackPanel Orientation="Horizontal">
                                 <materialDesign:PackIcon Kind="FileDocumentBoxMultipleOutline" 
                                                          VerticalAlignment="Center"></materialDesign:PackIcon>
-                                <TextBlock Margin="2 0 0 0" Text="File và đường dẫn" FontSize="13"></TextBlock>
+                                <TextBlock Margin="2 0 0 0" Text="File và đường dẫn" FontSize="14" FontWeight="DemiBold"></TextBlock>
                             </StackPanel>
                             <StackPanel Margin="5 4 0 0">
                                 <Grid Margin="0 10 0 0">
@@ -221,8 +228,8 @@
 
                         </Style>
                     </Grid.Resources>
-                    <Button Content="Lưu" Command="{Binding SaveSettingsCommand}" CommandParameter="{Binding ElementName=WindowSettingsView}"></Button>
-                    <Button Content="Hủy" Grid.Column="1" Command="{Binding CancelSettingsCommand}" CommandParameter="{Binding ElementName=WindowSettingsView}"></Button>
+                    <Button Content="Lưu" Background="#2AA86B" Command="{Binding SaveSettingsCommand}" CommandParameter="{Binding ElementName=WindowSettingsView}"></Button>
+                    <Button Content="Hủy" Background="#DF594E" Grid.Column="1" Command="{Binding CancelSettingsCommand}" CommandParameter="{Binding ElementName=WindowSettingsView}"></Button>
                 </Grid>
             </Grid>
         </Grid>

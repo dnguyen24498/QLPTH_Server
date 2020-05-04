@@ -102,12 +102,10 @@
                         <MenuItem Header="_Quản lý tài khoản" Template="{StaticResource VsMenuSub}" />
                         <MenuItem Header="_Đăng xuất" Template="{StaticResource VsMenuSub}" />
                     </MenuItem>
-                    <MenuItem Header="_Báo hỏng thiết bị" Template="{StaticResource VsOnline}">
-                        <MenuItem Header="_Báo hỏng" Template="{StaticResource VsMenuSub}" />
-                        <MenuItem Header="_Lịch sử báo hỏng" Template="{StaticResource VsMenuSub}" />
+                    <MenuItem Header="_Báo hỏng thiết bị" Template="{StaticResource VsOnline}" Click="MenuItem_Click_1">
                     </MenuItem>
                     <MenuItem Header="_Cài đặt" Click="MenuItem_Click" Template="{StaticResource VsOnline}"></MenuItem>
-                    <MenuItem Header="_Trợ giúp" Click="MenuItem_Click" Template="{StaticResource VsOnline}"></MenuItem>
+                    <MenuItem Header="_Trợ giúp" Template="{StaticResource VsOnline}"></MenuItem>
                 </Menu>
             </ToolBarOverflowPanel>
             <Grid Grid.Column="1" Background="Transparent"

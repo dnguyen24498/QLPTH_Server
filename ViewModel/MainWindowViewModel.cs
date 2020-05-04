@@ -80,7 +80,7 @@ namespace ViewModel
             Server.Server.Instance.ReceivedScreenCapture += Instance_ReceivedScreenCapture;
             LoadedWindowCommand = new RelayCommand<Grid>((p) => true, (p) => {
                 GenerateServer();
-                updateRoomInformationAsync(p);
+                UpdateRoomInformationAsync(p);
 
             });
             ClosedWindowCommand = new RelayCommand<object>((p) => true, (p) => {
@@ -104,7 +104,7 @@ namespace ViewModel
             Server.Server.Instance.BroadcastNotification += Instance_BroadcastNotification;
         }
 
-        private async void updateRoomInformationAsync(Grid p)
+        public async void UpdateRoomInformationAsync(Grid p)
         {
             p.Visibility = Visibility.Visible;
             GenerateNotification.ShowNoti("Thông báo mới", "Đang kết nối tới máy chủ dữ liệu...", Notifications.Wpf.NotificationType.Information);

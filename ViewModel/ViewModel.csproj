@@ -90,6 +90,7 @@
     <Compile Include="UCChatBoxViewModel.cs" />
     <Compile Include="UCClientInforViewModel.cs" />
     <Compile Include="UCMainControlViewModel.cs" />
+    <Compile Include="UCReportErrorViewModel.cs" />
     <Compile Include="ViewModelLocator.cs" />
   </ItemGroup>
   <ItemGroup>

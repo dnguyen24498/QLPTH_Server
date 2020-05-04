@@ -12,6 +12,19 @@ namespace ViewModel
         private static UCChatBoxViewModel _uCChatBoxViewModelStatic;
         private static UCMainControlViewModel _uCMainControlViewModelStatic;
         private static SettingWindowViewModel _settingWindowViewModelStatic;
+        private static UCReportErrorViewModel _uCReportErrorViewModelStatic;
+
+        public static UCReportErrorViewModel UCReportErrorViewModelStatic
+        {
+            get
+            {
+                if (_uCReportErrorViewModelStatic == null)
+                {
+                    _uCReportErrorViewModelStatic = new UCReportErrorViewModel();
+                }
+                return _uCReportErrorViewModelStatic;
+            }
+        }
         public static SettingWindowViewModel SettingWindowViewModelStatic
         {
             get

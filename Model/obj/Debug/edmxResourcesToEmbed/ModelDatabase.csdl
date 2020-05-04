@@ -6,7 +6,9 @@
     <EntitySet Name="ClassroomDevices" EntityType="DB_NCKHModel.ClassroomDevice" />
     <EntitySet Name="Devices" EntityType="DB_NCKHModel.Device" />
     <EntitySet Name="FloorOfAreas" EntityType="DB_NCKHModel.FloorOfArea" />
+    <EntitySet Name="Reports" EntityType="DB_NCKHModel.Report" />
     <EntitySet Name="sysdiagrams" EntityType="DB_NCKHModel.sysdiagram" />
+    <EntitySet Name="SettingProcesses" EntityType="DB_NCKHModel.SettingProcess" />
     <AssociationSet Name="FK_FloorOfArea_Area" Association="DB_NCKHModel.FK_FloorOfArea_Area">
       <End Role="Area" EntitySet="Areas" />
       <End Role="FloorOfArea" EntitySet="FloorOfAreas" />
@@ -19,15 +21,13 @@
       <End Role="Classroom" EntitySet="Classrooms" />
       <End Role="ClassroomDevice" EntitySet="ClassroomDevices" />
     </AssociationSet>
-    <AssociationSet Name="FK_ClassroomDevice_Device" Association="DB_NCKHModel.FK_ClassroomDevice_Device">
-      <End Role="Device" EntitySet="Devices" />
-      <End Role="ClassroomDevice" EntitySet="ClassroomDevices" />
-    </AssociationSet>
-    <EntitySet Name="Reports" EntityType="DB_NCKHModel.Report" />
-    <EntitySet Name="SettingProcesses" EntityType="DB_NCKHModel.SettingProcess" />
     <AssociationSet Name="FK_Report_Classroom" Association="DB_NCKHModel.FK_Report_Classroom">
       <End Role="Classroom" EntitySet="Classrooms" />
       <End Role="Report" EntitySet="Reports" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClassroomDevice_Device" Association="DB_NCKHModel.FK_ClassroomDevice_Device">
+      <End Role="Device" EntitySet="Devices" />
+      <End Role="ClassroomDevice" EntitySet="ClassroomDevices" />
     </AssociationSet>
     <AssociationSet Name="FK_Report_Device" Association="DB_NCKHModel.FK_Report_Device">
       <End Role="Device" EntitySet="Devices" />
@@ -88,6 +88,19 @@
     <NavigationProperty Name="Area" Relationship="DB_NCKHModel.FK_FloorOfArea_Area" FromRole="FloorOfArea" ToRole="Area" />
     <NavigationProperty Name="Classrooms" Relationship="DB_NCKHModel.FK_Classroom_FloorOfArea" FromRole="FloorOfArea" ToRole="Classroom" />
   </EntityType>
+  <EntityType Name="Report">
+    <Key>
+      <PropertyRef Name="ReportID" />
+    </Key>
+    <Property Name="ReportID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ClassroomID" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="DeviceID" Type="Int32" Nullable="false" />
+    <Property Name="IsDone" Type="Boolean" Nullable="false" />
+    <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="Classroom" Relationship="DB_NCKHModel.FK_Report_Classroom" FromRole="Report" ToRole="Classroom" />
+    <NavigationProperty Name="Device" Relationship="DB_NCKHModel.FK_Report_Device" FromRole="Report" ToRole="Device" />
+  </EntityType>
   <EntityType Name="sysdiagram">
     <Key>
       <PropertyRef Name="diagram_id" />
@@ -97,6 +110,14 @@
     <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="version" Type="Int32" />
     <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="SettingProcess">
+    <Key>
+      <PropertyRef Name="ProcessName" />
+    </Key>
+    <Property Name="ProcessName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ProcessIcon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IconForeground" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
   </EntityType>
   <Association Name="FK_FloorOfArea_Area">
     <End Type="DB_NCKHModel.Area" Role="Area" Multiplicity="1" />
@@ -134,41 +155,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_ClassroomDevice_Device">
-    <End Type="DB_NCKHModel.Device" Role="Device" Multiplicity="1" />
-    <End Type="DB_NCKHModel.ClassroomDevice" Role="ClassroomDevice" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Device">
-        <PropertyRef Name="DeviceID" />
-      </Principal>
-      <Dependent Role="ClassroomDevice">
-        <PropertyRef Name="DeviceID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <EntityType Name="Report">
-    <Key>
-      <PropertyRef Name="ClassroomID" />
-      <PropertyRef Name="DeviceID" />
-      <PropertyRef Name="IsDone" />
-      <PropertyRef Name="DateCreated" />
-    </Key>
-    <Property Name="ClassroomID" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
-    <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-    <Property Name="DeviceID" Type="Int32" Nullable="false" />
-    <Property Name="IsDone" Type="Boolean" Nullable="false" />
-    <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="0" />
-    <NavigationProperty Name="Classroom" Relationship="DB_NCKHModel.FK_Report_Classroom" FromRole="Report" ToRole="Classroom" />
-    <NavigationProperty Name="Device" Relationship="DB_NCKHModel.FK_Report_Device" FromRole="Report" ToRole="Device" />
-  </EntityType>
-  <EntityType Name="SettingProcess">
-    <Key>
-      <PropertyRef Name="ProcessName" />
-    </Key>
-    <Property Name="ProcessName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="ProcessIcon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="IconForeground" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-  </EntityType>
   <Association Name="FK_Report_Classroom">
     <End Type="DB_NCKHModel.Classroom" Role="Classroom" Multiplicity="1" />
     <End Type="DB_NCKHModel.Report" Role="Report" Multiplicity="*" />
@@ -178,6 +164,18 @@
       </Principal>
       <Dependent Role="Report">
         <PropertyRef Name="ClassroomID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClassroomDevice_Device">
+    <End Type="DB_NCKHModel.Device" Role="Device" Multiplicity="1" />
+    <End Type="DB_NCKHModel.ClassroomDevice" Role="ClassroomDevice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Device">
+        <PropertyRef Name="DeviceID" />
+      </Principal>
+      <Dependent Role="ClassroomDevice">
+        <PropertyRef Name="DeviceID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

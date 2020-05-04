@@ -29,6 +29,17 @@ namespace ViewModel
         }
         public ICommand LoadedUCMainControl { get; set; }
 
+        private int numbNotification;
+        public int NumbNotification
+        {
+            get => numbNotification;
+            set
+            {
+                numbNotification = value;
+                OnPropertyChanged();
+            }
+        }
+
         public ICommand AddProcessCommand { get; set; }
 
         public ICommand DeleteProcessCommand { get; set; }
@@ -119,11 +130,12 @@ namespace ViewModel
         public UCMainControlViewModel()
         {
             ListNotification = new ObservableCollection<MessageArgs>();
+            NumbNotification = ListNotification.Count();
             DisableControl = true;
             SelectedView = 0;
-            LoadedUCMainControl = new RelayCommand<object>((p) => true, async (p) =>
+            LoadedUCMainControl = new RelayCommand<object>((p) => true,(p) =>
               {
-                  await getRoomDeviceAsync();
+                  GetRoomDeviceAsync();
                   Server.Server.Instance.BroadcastNotification += Instance_BroadcastNotification;
                   ListProcess = Server.ManageSettings.GetListSettingProcess();
               });
@@ -171,14 +183,17 @@ namespace ViewModel
                   if (SelectedView == 0)
                   {
                       p.ItemsSource = ListNotification;
+                      NumbNotification = ListNotification.Count;
                   }
                   else if (SelectedView == 1)
                   {
                       p.ItemsSource = _systemNotification;
+                      NumbNotification = _systemNotification.Count;
                   }
                   else if (SelectedView == 2)
                   {
                       p.ItemsSource = _userNotification;
+                      NumbNotification = _userNotification.Count;
                   }
               });
 
@@ -206,20 +221,52 @@ namespace ViewModel
               });
         }
 
+        public async void GetRoomDeviceAsync()
+        {
+            await Task.Run(() => getRoomDeviceAsync());
+        }
 
         private async Task<List<SettingProcess>> GetSettingProcessArgs(string processName)
         {
-            var result = await Task.Run(() => DataProvider.Ins.DB.SettingProcesses.Where(x => x.ProcessName.Contains(processName.ToLower())).ToList()) ?? null;
-            if (result.Count > 0)
+            try
             {
-                return result;
+                var result = await Task.Run(()=>getSettingProcess(processName));
+                if (result.Count > 0)
+                {
+                    return result;
+                }
+            }
+            catch
+            {
+                Server.Server.Instance.OnBroadcastNotification(new MessageArgs("Server database không phản hồi"));
+                return null;
             }
             return null;
         }
-
-        private async Task getRoomDeviceAsync()
+        
+        private List<SettingProcess> getSettingProcess(string processName)
         {
-            ListRoomDevice = await Task.Run(() => new ObservableCollection<ClassroomDevice>(DataProvider.Ins.DB.ClassroomDevices.Where(x => x.ClassroomID.Equals(ManageSettings.RoomID)).ToList()));
+            try
+            {
+                return DataProvider.Ins.DB.SettingProcesses.Where(x => x.ProcessName.Contains(processName.ToLower())).ToList();
+            }
+            catch
+            {
+                return new List<SettingProcess>();
+            }
+        }
+
+        private void getRoomDeviceAsync()
+        {
+            try
+            {
+                ListRoomDevice = new ObservableCollection<ClassroomDevice>(DataProvider.Ins.DB.ClassroomDevices.Where(x => x.ClassroomID.Equals(ManageSettings.RoomID)).ToList());
+            }
+            catch
+            {
+                ListRoomDevice = new ObservableCollection<ClassroomDevice>();
+                Server.Server.Instance.OnBroadcastNotification(new MessageArgs("Server database không phản hồi"));
+            }
         }
 
         private int getInterval(string txt)
@@ -244,6 +291,7 @@ namespace ViewModel
             Application.Current.Dispatcher.Invoke((Action)delegate
             {
                 ListNotification.Add(e);
+                NumbNotification++;
                 if (e.Type == "InformationCircle")
                 {
                     _systemNotification.Add(e);
